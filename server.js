@@ -3,7 +3,7 @@ const app = express()
 
 app.get("/",(req,res) => {
     console.log("i was here")
-    res.send("i got c")
+    res.send("i got called")
 })
 
 
