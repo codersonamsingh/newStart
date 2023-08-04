@@ -19,6 +19,9 @@ app.use(cookiesession([
 app.use(passport.initialize());
 app.use(passport.session());
 
+require("./strategies/jsonStrategy")(passport)
+
+
 const port = process.env.PORT ||2050;
 
 app.listen(port, () => {
