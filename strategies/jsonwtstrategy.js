@@ -6,4 +6,18 @@ const User = mongoose.model("myUser");
 
 //const myKey = require()
 
-var opts = ()
+var opts = {};
+opts.jsonFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = "awer"
+
+module.exports = passport => {
+    passport.use(
+        new JwtStrategy(opts, (jwt_payload, done) =>{
+            User.findById(jwt_payload.id)
+            .then(User => {
+                if(user)
+            })
+        })
+    )
+}
+
