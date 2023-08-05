@@ -21,11 +21,11 @@ app.use(passport.session());
 
 
 require("./Models/User")
-require("./strategies/jsonwtstrategy")(passport)
+require("./strategies/jsonwtStrategy")(passport)
 
 
 const port = process.env.PORT ||2050;
 
 app.listen(port, () => {
-    console.log('server is running at ${port}' )
+    console.log(`Server is running at ${port}` )
 })
