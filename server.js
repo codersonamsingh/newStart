@@ -23,7 +23,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+//passport strategy
 require("./Models/User")
 require("./strategies/jsonwtStrategy")(passport)
 
