@@ -4,12 +4,17 @@ const path = require("path");
 const cors = require("cors");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const upload = require("express-fileupload")
+
 
 //bring all route
 const login = require("./routes/api/auth/login")
 
-const app = express()
+const app = express();
+app.use(upload({useTempfiles:true}))
+
+
 
 //call all route
 app.use("api/v1/auth/login",login)
@@ -43,6 +48,14 @@ mongoose
 .then(() => console.log("MongoDb connected"))
 .catch(Err => console.log(Err))
 
+app.get("/*",function(req,res){
+    res.sendFile(
+        path.join(__dirname,"./client/build/index.html"),
+        function(err){
+            res.status(500).send(err);
+        }
+    )
+})
 
 
 
