@@ -6,12 +6,12 @@ const passport = require("passport");
 const cookieSession = require("cookie-session");
 const mongoose = require("mongoose")
 
-//bring all routes
+//bring all route
 const login = require("./routes/api/auth/login")
 
 const app = express()
 
-//call all routes
+//call all route
 app.use("api/v1/auth/login",login)
 
 

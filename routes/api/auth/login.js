@@ -8,3 +8,4 @@ router.get("/sendOtp",(req,res)=> {
         variant:"success"
     })
 })
+module.exports = router
