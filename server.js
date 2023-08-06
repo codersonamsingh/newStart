@@ -3,7 +3,7 @@ const bodyparser = require("body-parser")
 const path = require("path");
 const cors = require("cors");
 const passport = require("passport");
-const cookieSession = require("cookie-session")
+const cookieSession = require("cookie-session");
 const mongoose = require("mongoose")
 
 const app = express()
@@ -29,7 +29,12 @@ require("./strategies/jsonwtStrategy")(passport)
 
 //data base connection
 
+const db = require("./setup/myurl").mongoURL;
 
+mongoose
+.connect(db, {useNewUrlParser:true, useUnifiedTopology:true})
+.then(() => console.log("MongoDb connected"))
+.catch(Err => console.log(Err))
 
 
 
