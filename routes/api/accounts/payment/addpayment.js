@@ -6,7 +6,7 @@ const router = express.Router();
 //@route / api/v1/accounts/payment/addpayment
 //@des create New payment
 //@access public
-router.post("/",(req,res) =>{
+router.post("/",async(req,res) =>{
 
 
     let paymentobj = {}
@@ -20,7 +20,14 @@ router.post("/",(req,res) =>{
         paymentobj.amount = req.body.amount
     }
 
-    await new payment(paymentobj)
+    await new Payment(paymentobj)
     .save();
 
+    res.status(201).json({
+        message: "Payment Added",
+        varient: "success"
+    })
+
 })
+
+module.exports = router;
