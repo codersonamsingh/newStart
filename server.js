@@ -14,7 +14,7 @@ const app = express();
 app.use(upload({useTempfiles:true}))
 
 //call all route
-app.use("api/v1/auth/login",login)
+
 
 
 //configure middleware
