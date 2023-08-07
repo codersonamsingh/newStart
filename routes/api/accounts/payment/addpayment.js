@@ -7,6 +7,14 @@ const router = express.Router();
 //@des create New payment
 //@access public
 router.post("/",async(req,res) =>{
+    if(!req.body.amount){
+
+        res.status(400).json({
+            message:"Amount Required",
+            varient:"error"
+
+        })
+    }
 
 
     let paymentobj = {}
