@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const upload = require("express-fileupload")
 
 //bring all route
-const login = require("./routes/api/auth/login")
+
 
 const app = express();
 app.use(upload({useTempfiles:true}))
