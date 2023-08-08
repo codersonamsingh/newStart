@@ -1,5 +1,8 @@
 const express = require("express");
+const Payment = require("../../../../../Models/Accounts/Patyment");
 const router = express.Router();
+
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
 
 
 //@type POST
