@@ -41,4 +41,10 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 })
 
+async function getPaymentObj(req,type){
+
+
+    
+}
 module.exports = router;
+
