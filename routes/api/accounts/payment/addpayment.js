@@ -1,15 +1,15 @@
 const express = require("express");
-const Payment = require("../../../../../Models/Accounts/Patyment");
+const Payment = require("../../../../Models/Accounts/Payment");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../validation/account/paymentValidation")
 
 
 //@type POST
 //@route / api/v1/accounts/payment/addpayment
 //@des create New payment
 //@access public
-router.post("/",async(req,res) =>{
+router.post("/",validateOnCreate, async(req,res) =>{
     if(!req.body.amount){
 
         res.status(400).json({

@@ -1,13 +1,13 @@
-const validateOnCrete = async(req,res,next) => {
+const validateOnCreate = async(req,res,next) => {
 
 
 
     next();
 }
 
-const validatteOnUpdate = async(req,res,next) => {
+const validateOnUpdate = async(req,res,next) => {
 
     next();
 }
 
-module.exports = {validateOnCrete, validatteOnUpdate}
+module.exports = {validateOnCreate, validateOnUpdate}
