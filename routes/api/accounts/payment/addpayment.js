@@ -44,7 +44,22 @@ router.post("/",validateOnCreate, async(req,res) =>{
 async function getPaymentObj(req,type){
 
 
+    let newPayment = {}
+    if (req.body.amount){
+        newPayment.amount = req.body.amount
+    }
+    if(req.body.note){
+        newPayment.amount = req.body.amount
+    }
+    if(req.body.date){
+        newPayment.amount = req.body.amount
+    }
+
+
+
+
     
+
 }
 module.exports = router;
 
