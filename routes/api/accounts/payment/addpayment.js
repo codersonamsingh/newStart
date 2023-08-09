@@ -10,17 +10,15 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../validation/acc
 //@des create New payment
 //@access public
 router.post("/",validateOnCreate, async(req,res) =>{
+    if(!req)
 
-    const paymentobj = await 
-    
 
-    if(!req.body.amount){
 
-        res.status(400).json({
-            message:"Amount Required",
-            varient:"error"
-        })
-    }
+
+
+
+}
+
 
 
     let paymentobj = {}
