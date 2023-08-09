@@ -11,19 +11,14 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../validation/acc
 //@access public
 router.post("/",validateOnCreate, async(req,res) =>{
 
+    const paymentobj = await 
     
-
-
-
-
-
 
     if(!req.body.amount){
 
         res.status(400).json({
             message:"Amount Required",
             varient:"error"
-
         })
     }
 
@@ -64,8 +59,6 @@ async function getPaymentObj(req,type){
     }
 
     return newPayment
-
- 
 
 }
 module.exports = router;
