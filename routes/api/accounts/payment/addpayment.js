@@ -30,36 +30,8 @@ router.post("/",validateOnCreate, async(req,res) =>{
         }
         if(req.body.amount) {
             paymentobj.amount = req.body.amount
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
-
-
-
-
-
-
-
-
-
-}
-
-
-
     await new Payment(paymentobj)
     .save();
 
@@ -68,7 +40,10 @@ router.post("/",validateOnCreate, async(req,res) =>{
         varient: "success"
     })
 
+}
 })
+
+module.express = router;
 
 async function getPaymentObj(req,type){
 
