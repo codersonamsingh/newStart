@@ -22,6 +22,30 @@ router.post("/",validateOnCreate, async(req,res) =>{
         if(req.body.amount) {
             paymentobj.amount = req.body.amount
         }
+        if(req.body.note) {
+            paymentobj.note = req.body.note
+        }
+        if(req.body.date) {
+            paymentobj.date = req.body.date
+        }
+        if(req.body.amount) {
+            paymentobj.amount = req.body.amount
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
