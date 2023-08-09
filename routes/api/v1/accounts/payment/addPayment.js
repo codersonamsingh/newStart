@@ -1,8 +1,8 @@
 const express = require("express");
-const Payment = require("../../../../Models/Accounts/Payment");
+const Payment = require("../../../../../Models/Accounts/Payment");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../validation/account/paymentValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
 
 
 //@type POST
@@ -44,23 +44,4 @@ router.post("/",validateOnCreate, async(req,res) =>{
 })
 
 module.express = router;
-
-async function getPaymentObj(req,type){
-
-
-    let newPayment = {}
-    if (req.body.amount){
-        newPayment.amount = req.body.amount
-    }
-    if(req.body.note){
-        newPayment.amount = req.body.amount
-    }
-    if(req.body.date){
-        newPayment.amount = req.body.amount
-    }
-
-    return newPayment
-
-}
-module.exports = router;
 
