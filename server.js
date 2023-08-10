@@ -14,7 +14,7 @@ const app = express();
 app.use(upload({useTempfiles:true}))
 
 //call all route
-app.use("api/v1/accounts/Payment/addPayment",addPayment)
+app.use("api/v1/accounts/payment/addPayment",addPayment)
 
 //configure middleware
 app.use(express.urlencoded({extended:true,limit:"50mb"}));

@@ -39,7 +39,6 @@ router.post("/",validateOnCreate, async(req,res) =>{
         message: "Payment Added",
         varient: "success"
     })
-
 }
 })
 
