@@ -13,13 +13,22 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 const paymentObj = await getPaymentObj(req,"create")
 
-    await new Payment(newPayment)
+
+
+try{
+
+    await new Payment(paymentObj)
     .save();
 
     res.status(201).json({
         message: "Payment Added",
         varient: "success"
     })
+
+
+}catch(error) {
+
+}
 
 })
 
