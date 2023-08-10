@@ -11,7 +11,8 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //@access public
 router.post("/",validateOnCreate, async(req,res) =>{
 
-    
+const paymentObj = await getPaymentObj(req,"create")
+
     await new Payment(newPayment)
     .save();
 
@@ -38,6 +39,8 @@ async function getnewPayment(req,type){
         newPayment.amount = req.body.amount
 
     }
+
+    return newPayment
 }
     
 module.exports = router;
