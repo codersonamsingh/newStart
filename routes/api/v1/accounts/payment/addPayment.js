@@ -32,7 +32,6 @@ try{
         varient: "error"
     })
 }
-
 })
 
 async function getnewPayment(req,type){
