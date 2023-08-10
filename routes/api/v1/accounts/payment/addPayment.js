@@ -4,11 +4,6 @@ const router = express.Router();
 
 const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
 
-
-//@type POST
-//@route / api/v1/accounts/payment/addpayment
-//@des create New payment
-//@access public
 router.post("/",validateOnCreate, async(req,res) =>{
 
 const paymentObj = await getpaymentObj(req,"create")
@@ -16,6 +11,8 @@ const paymentObj = await getpaymentObj(req,"create")
 
 
 try{
+    const paymentObj = await getpaymentObj(req,"create")
+
 
     await new Payment(paymentObj)
     .save();
@@ -33,6 +30,31 @@ try{
     })
 }
 })
+//@type POST
+//@route / api/v1/accounts/payment/addpayment
+//@des create New payment
+//@access public
+
+router.post("/:id",async (req,res) => {
+    try{
+        const paymentObj = await getpaymentObj(req,"update")
+
+
+    }catch (error) {console.log(error)
+
+        res.status(500).json({
+            message: "Internal Server error",
+            varient: "error"
+        })
+         
+        
+    }
+})
+
+
+
+
+
 
 async function getnewPayment(req,type){
 
