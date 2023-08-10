@@ -13,8 +13,7 @@ const addPayment = require("./routes/api/v1/accounts/payment/addPayment")
 const app = express();
 app.use(upload({useTempfiles:true}))
 
-//call all route
-app.use("api/v1/accounts/payment/addPayment",addPayment)
+
 
 //configure middleware
 app.use(express.urlencoded({extended:true,limit:"50mb"}));
@@ -33,6 +32,11 @@ app.use(passport.session());
 //passport strategy
 require("./Models/User")
 require("./strategies/jsonwtStrategy")(passport)
+
+
+
+//call all route
+app.use("/api/v1/accounts/payment/addPayment",addPayment)
 
 //data base connection
 const db = require("./setup/myurl").mongoURL;

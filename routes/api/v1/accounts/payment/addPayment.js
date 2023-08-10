@@ -42,5 +42,5 @@ router.post("/",validateOnCreate, async(req,res) =>{
 }
 })
 
-module.express = router;
+module.exports = router;
 
