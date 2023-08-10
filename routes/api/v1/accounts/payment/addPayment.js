@@ -10,30 +10,35 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //@des create New payment
 //@access public
 router.post("/",validateOnCreate, async(req,res) =>{
-    
-        let PaymentObj = {}
-        if(req.body.amount) {
-            paymentobj.amount = req.body.amount
-        }
-        if(req.body.note) {
-            paymentobj.note = req.body.note
-        }
-        if(req.body.date) {
-            paymentobj.date = req.body.date
-        }
-        if(req.body.amount) {
-            paymentobj.amount = req.body.amount
 
     
-    await new Payment(paymentobj)
+    await new Payment(newPayment)
     .save();
 
     res.status(201).json({
         message: "Payment Added",
         varient: "success"
     })
-}
+
 })
 
+async function getnewPayment(req,type){
+
+    let newPayment = {}
+    if(req.body.amount) {
+        newPayment.amount = req.body.amount
+    }
+    if(req.body.note) {
+        newPayment.note = req.body.note
+    }
+    if(req.body.date) {
+        newPayment.date = req.body.date
+    }
+    if(req.body.amount) {
+        newPayment.amount = req.body.amount
+
+    }
+}
+    
 module.exports = router;
 
