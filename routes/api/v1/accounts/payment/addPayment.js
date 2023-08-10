@@ -11,7 +11,7 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //@access public
 router.post("/",validateOnCreate, async(req,res) =>{
 
-const paymentObj = await getPaymentObj(req,"create")
+const paymentObj = await getpaymentObj(req,"create")
 
 
 
