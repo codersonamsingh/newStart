@@ -39,9 +39,10 @@ router.post("/:id",async (req,res) => {
     try{
         const paymentObj = await getpaymentObj(req,"update")
 
-        const payment = awit Payment.findOneAndUpdate(
+        const payment = await Payment.findOneAndUpdate(
             {_id:req.params.id},
             {$set: paymentObj},
+            {new:true}
         )
 
         if(!Payment){
@@ -58,7 +59,12 @@ router.post("/:id",async (req,res) => {
             varient: "error"
         })
          
-        
+        res.status(500).json({
+            message: "Payment Updated Successfully",
+            varient: "success"
+        })
+         
+
     }
 })
 
