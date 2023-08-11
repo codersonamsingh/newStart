@@ -52,6 +52,12 @@ router.post("/:id",async (req,res) => {
             })
         }
 
+        res.status(201).json({
+            message: "Payment Updated Successfully",
+            varient: "success"
+        })
+         
+
     }catch (error) {console.log(error)
 
         res.status(500).json({
@@ -59,11 +65,7 @@ router.post("/:id",async (req,res) => {
             varient: "error"
         })
          
-        res.status(500).json({
-            message: "Payment Updated Successfully",
-            varient: "success"
-        })
-         
+        
 
     }
 })
