@@ -62,7 +62,6 @@ router.post("/:id",async (req,res) => {
         }) 
     }
 })
-
 async function getpaymentObj(req,type){
 
     let newPayment = {}
