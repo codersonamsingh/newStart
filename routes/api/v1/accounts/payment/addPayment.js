@@ -39,6 +39,11 @@ router.post("/:id",async (req,res) => {
     try{
         const paymentObj = await getpaymentObj(req,"update")
 
+        const ayment = awit Payment.findOneAndUpdate(
+            {_id:req.params.id},
+            {$set: paymentObj},
+        )
+
 
     }catch (error) {console.log(error)
 
