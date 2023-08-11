@@ -87,10 +87,7 @@ async function getnewPayment(req,type){
     if(req.body.date) {
         newPayment.date = req.body.date
     }
-    if(req.body.amount) {
-        newPayment.amount = req.body.amount
-
-    }
+   
 
     return newPayment
 }
