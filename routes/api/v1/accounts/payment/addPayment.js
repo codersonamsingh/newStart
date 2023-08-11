@@ -6,10 +6,6 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
-const paymentObj = await getpaymentObj(req,"create")
-
-
-
 try{
     const paymentObj = await getpaymentObj(req,"create")
 
@@ -67,7 +63,7 @@ router.post("/:id",async (req,res) => {
     }
 })
 
-async function getnewPayment(req,type){
+async function getpaymentObj(req,type){
 
     let newPayment = {}
     if(req.body.amount) {

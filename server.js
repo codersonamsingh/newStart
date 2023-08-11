@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const upload = require("express-fileupload")
 
 //bring all route
-//const addPayment = require("./routes/api/v1/accounts/payment/addPayment")
+const addPayment = require("./routes/api/v1/accounts/payment/addPayment")
 
 const app = express();
 app.use(upload({useTempfiles:true}))
