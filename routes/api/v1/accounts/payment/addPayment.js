@@ -26,10 +26,6 @@ try{
     })
 }
 })
-//@type POST
-//@route / api/v1/accounts/payment/addpayment
-//@des create New payment
-//@access public
 
 router.post("/:id",async (req,res) => {
     try{
@@ -62,6 +58,13 @@ router.post("/:id",async (req,res) => {
         }) 
     }
 })
+//@type Delete
+//@route / api/v1/accounts/payment/addpayment/id:
+//@des Delete payment
+//@access public
+
+
+
 async function getpaymentObj(req,type){
 
     let newPayment = {}
