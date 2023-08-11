@@ -45,7 +45,10 @@ router.post("/:id",async (req,res) => {
         )
 
         if(!Payment){
-            
+            res.status(500).json({
+                message: "payment not found",
+                varient: "error"
+            })
         }
 
     }catch (error) {console.log(error)
