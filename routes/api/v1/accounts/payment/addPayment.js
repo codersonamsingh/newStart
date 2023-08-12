@@ -37,17 +37,6 @@ router.post("/:id",async (req,res) => {
             {new:true}
         )
 
-        if(!Payment){
-            res.status(500).json({
-                message: "payment not found",
-                varient: "error"
-            })
-        }
-
-        res.status(201).json({
-            message: "Payment Updated Successfully",
-            varient: "success"
-        })
          
 
     }catch (error) {console.log(error)
@@ -64,7 +53,25 @@ router.post("/:id",async (req,res) => {
 //@access public
 
 router.delete("/deleteOne/:id",(req,res) => {
-    
+
+    try{
+
+        const payment = await Payment.findByIdAndRemove(req.params.id);
+        if(!Payment){
+            res.status(500).json({
+                message: "payment not found",
+                varient: "error"
+            })
+        }
+
+        res.status(201).json({
+            message: "Payment Deleted Successfully",
+            varient: "success"
+        })
+
+    }
+    catch(error){}
+
 })
 
 
