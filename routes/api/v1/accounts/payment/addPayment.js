@@ -37,7 +37,17 @@ router.post("/:id",async (req,res) => {
             {new:true}
         )
 
-         
+        if(!Payment){
+            res.status(500).json({
+                message: "payment not found",
+                varient: "error"
+            })
+        }
+
+        res.status(201).json({
+            message: "Payment Successfully",
+            varient: "success"
+        })
 
     }catch (error) {console.log(error)
 
@@ -48,7 +58,7 @@ router.post("/:id",async (req,res) => {
     }
 })
 //@type Delete
-//@route / api/v1/accounts/payment/addpayment/id:
+//@route / api/v1/accounts/payment/addpayment/deleteOne/id:
 //@des Delete payment
 //@access public
 
@@ -70,11 +80,15 @@ router.delete("/deleteOne/:id",async(req,res) => {
         })
 
     }
-    catch(error){}
+    catch(error){
+        console.log(error)
 
-})
-
-
+        res.status(500).json({
+            message: "Internal Server error",
+            varient: "error"
+        })
+    }
+    })
 
 async function getpaymentObj(req,type){
 
