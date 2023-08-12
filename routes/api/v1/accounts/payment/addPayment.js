@@ -63,6 +63,10 @@ router.post("/:id",async (req,res) => {
 //@des Delete payment
 //@access public
 
+router.delete("/deleteOne/:id",(req,res) => {
+    
+})
+
 
 
 async function getpaymentObj(req,type){
