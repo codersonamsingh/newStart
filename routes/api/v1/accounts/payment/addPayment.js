@@ -52,11 +52,11 @@ router.post("/:id",async (req,res) => {
 //@des Delete payment
 //@access public
 
-router.delete("/deleteOne/:id",(req,res) => {
+router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
 
-        const payment = await Payment.findByIdAndRemove(req.params.id);
+        const Payment = await Payment.findByIdAndRemove(req.params.id);
         if(!Payment){
             res.status(500).json({
                 message: "payment not found",
