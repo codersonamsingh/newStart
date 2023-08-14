@@ -4,6 +4,29 @@ const router = express.Router();
 
 const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
 
+//@type POST
+//@routes/api/v1/accounts/payment/addpayment
+//@des crete New payment
+//@access public
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post("/",validateOnCreate, async(req,res) =>{
 
 try{
