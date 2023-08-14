@@ -9,25 +9,20 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //@des crete New payment
 //@access public
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.post("/",validateOnCreate, async(req,res) =>{
+
+//@type POST
+//@routes/api/v1/accounts/payment/addpayment
+//@des crete Update payment
+//@access public
+
+
+
+
+
+
+
+
 
 try{
     const paymentObj = await getpaymentObj(req,"create")
