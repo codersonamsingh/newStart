@@ -4,7 +4,7 @@ const router = express.Router();
 
 const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
 
-//CRUD
+//CRUD = crete Read Update Delete
 
 
 //@type POST
