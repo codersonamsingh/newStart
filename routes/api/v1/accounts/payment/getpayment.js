@@ -9,6 +9,19 @@ const router = express.Router();
 //@access public
 router.get("/getAll,"(req,res) => {
 
+try{
+    
+const getPayment = 
+
+}catch(error){
+    console.log(error)
+
+    res.status(500).json({
+        message: "Internal Server error",
+        varient: "error"
+    })
+}
+
 
 })
 
