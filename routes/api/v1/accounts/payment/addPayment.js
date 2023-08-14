@@ -4,6 +4,9 @@ const router = express.Router();
 
 const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
 
+//CRUD
+
+
 //@type POST
 //@routes/api/v1/accounts/payment/addpayment
 //@des crete New payment
@@ -11,17 +14,12 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
+
+})
 //@type POST
-//@routes/api/v1/accounts/payment/addpayment
+//@routes/api/v1/accounts/payment/addpayment/id:
 //@des crete Update payment
 //@access public
-
-
-
-
-
-
-
 
 
 try{
@@ -43,7 +41,7 @@ try{
         varient: "error"
     })
 }
-})
+
 
 router.post("/:id",async (req,res) => {
     try{
