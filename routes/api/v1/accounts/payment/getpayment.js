@@ -58,4 +58,30 @@ router.get("/getOne/:id", async(req,res) => {
     }
     })
 
+//@type Get search
+//@route /api/v1/account/payment/getpayment/search/:seachQuery
+//@des to search payment
+//@access public
+router.get("/seach/:seachQuery", async(req,res) => {
+
+    try{ 
+        
+        const getpayment = await payment.findById(req.params.id)
+    
+    
+         res.json({
+            data:getpayment,
+            message:"payment loaded",
+            varient:"success"
+         })
+    
+    }catch(error){
+        console.log(error)
+    
+        res.status(500).json({
+            message: "Internal Server error",
+            varient: "error"
+        })
+    }
+    })
 module.exports = router
