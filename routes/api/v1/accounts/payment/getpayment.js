@@ -67,8 +67,10 @@ router.get("/seach/:seachQuery", async(req,res) => {
     try{ 
         
         const searchQuery = req.params.seachQuery
-        
-        const getpayment = await payment.findById(req.params.id)
+
+        const getpayment = await payment.find({
+            amount: new RegExp(searchQuery, "i")
+        })
     
     
          res.json({
