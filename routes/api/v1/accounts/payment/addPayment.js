@@ -19,8 +19,8 @@ router.post("/",validateOnCreate, async(req,res) =>{
 //@routes/api/v1/accounts/payment/addpayment/id:
 //@des crete Update payment
 //@access public
-
-
+router.post("/:id",async (req,res) => {
+})
 try{
     const paymentObj = await getpaymentObj(req,"create")
 
@@ -42,7 +42,7 @@ try{
 }
 
 
-router.post("/:id",async (req,res) => {
+
     try{
         const paymentObj = await getpaymentObj(req,"update")
 
@@ -71,13 +71,13 @@ router.post("/:id",async (req,res) => {
             varient: "error"
         }) 
     }
-})
 //@type Delete
 //@route / api/v1/accounts/payment/addpayment/deleteOne/id:
 //@des Delete payment
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
+    })
 
     try{
 
@@ -103,7 +103,6 @@ router.delete("/deleteOne/:id",async(req,res) => {
             varient: "error"
         })
     }
-    })
 
 async function getpaymentObj(req,type){
 
