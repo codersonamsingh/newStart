@@ -1,6 +1,7 @@
 //Read = 1. Get ALL payment , 2. get one payment by Id, 3. Search Payment with note or amount
 
-const express =require("express");
+const express = require("express");
+const payment = require("../../../../../Models/Accounts/Payment");
 const router = express.Router();
 
 //@type Get
@@ -9,17 +10,16 @@ const router = express.Router();
 //@access public
 router.get("/getAll", async(req,res) => {
 
-try{
+try{ 
     
-    const getpayment = await Payment.find()
+    const getpayment = await payment.find()
 
 
      res.json({
-        
-
+        data:getpayment,
+        message:"payment loaded",
+        varient:"success"
      })
-
-
 
 }catch(error){
     console.log(error)
@@ -29,8 +29,6 @@ try{
         varient: "error"
     })
 }
-
-
 })
 
 module.exports = router
