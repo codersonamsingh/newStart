@@ -7,11 +7,11 @@ const router = express.Router();
 //@route /api/v1/account/payment/getAll
 //@des get all  payment
 //@access public
-router.get("/getAll,"(req,res) => {
+router.get("/getAll", async(req,res) => {
 
 try{
     
-const getpay
+const getpayment = await Payment.find()
 
 }catch(error){
     console.log(error)
