@@ -66,6 +66,8 @@ router.get("/seach/:seachQuery", async(req,res) => {
 
     try{ 
         
+        const searchQuery = req.params.seachQuery
+        
         const getpayment = await payment.findById(req.params.id)
     
     
