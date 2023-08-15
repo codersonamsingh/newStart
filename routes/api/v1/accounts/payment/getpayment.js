@@ -11,7 +11,15 @@ router.get("/getAll", async(req,res) => {
 
 try{
     
-const getpayment = await Payment.find()
+    const getpayment = await Payment.find()
+
+
+     res.json({
+        
+
+     })
+
+
 
 }catch(error){
     console.log(error)
