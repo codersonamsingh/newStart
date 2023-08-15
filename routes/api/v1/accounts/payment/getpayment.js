@@ -11,7 +11,7 @@ router.get("/getAll,"(req,res) => {
 
 try{
     
-const getPayment = 
+const getpay
 
 }catch(error){
     console.log(error)
