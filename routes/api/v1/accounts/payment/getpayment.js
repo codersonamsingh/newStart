@@ -31,7 +31,6 @@ try{
 }
 })
 
-
 //@type Get
 //@route /api/v1/account/payment/getpayment/getOne/:id
 //@des get one payment
