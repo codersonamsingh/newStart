@@ -71,7 +71,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         const getpayment = await payment.find({
             $or:[
                 {note: new RegExp(searchQuery, "i")},
-                {amount: new RegExp(Number(searchQuery))}
+                {amount: (Number(searchQuery))}
             ]
         })
     
