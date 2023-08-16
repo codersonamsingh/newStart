@@ -1,23 +1,23 @@
-//Read = 1. Get ALL payment , 2. get one payment by Id, 3. Search Payment with note or amount
+//Read = 1. Get ALL receipt , 2. get one receipt by Id, 3. Search Receipt with note or amount
 
 const express = require("express");
-const payment = require("../../../../../Models/Accounts/Payment");
+const Receipt = require("../../../../../Models/Accounts/Receipt");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/payment/getpayment/getAll
-//@des get all  payment
+//@route /api/v1/account/receipt/getreceipt/getAll
+//@des get all  receipt
 //@access public
 router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getpayment = await payment.find()
+    const getreceipt = await receipt.find()
 
 
      res.json({
-        data:getpayment,
-        message:"payment loaded",
+        data:getreceipt,
+        message:"receipt loaded",
         varient:"success"
      })
 
@@ -32,19 +32,19 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/payment/getpayment/getOne/:id
-//@des get one payment
+//@route /api/v1/account/receipt/getreceipt/getOne/:id
+//@des get one receipt
 //@access public
 router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getpayment = await payment.findById(req.params.id)
+        const getreceipt = await receipt.findById(req.params.id)
     
     
          res.json({
-            data:getpayment,
-            message:"payment loaded",
+            data:getreceipt,
+            message:"receipt loaded",
             varient:"success"
          })
     
@@ -59,8 +59,8 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/payment/getpayment/search/:seachQuery
-//@des to search payment
+//@route /api/v1/account/receipt/getreceipt/search/:seachQuery
+//@des to search receipt
 //@access public
 router.get("/search/:searchQuery", async(req,res) => {
 
@@ -68,7 +68,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         
         const searchQuery = req.params.searchQuery
 
-        const getpayment = await payment.find({
+        const getreceipt = await receipt.find({
             $or:[
                 {note: new RegExp(searchQuery, "i")},
                 {amount: (Number(searchQuery))}
@@ -76,8 +76,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         })
     
          res.json({
-            data:getpayment,
-            message:"payment loaded",
+            data:getreceipt,
+            message:"receipt loaded",
             varient:"success"
          })
     
