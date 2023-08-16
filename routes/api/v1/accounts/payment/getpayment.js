@@ -62,14 +62,14 @@ router.get("/getOne/:id", async(req,res) => {
 //@route /api/v1/account/payment/getpayment/search/:seachQuery
 //@des to search payment
 //@access public
-router.get("/seach/:seachQuery", async(req,res) => {
+router.get("/search/:searchQuery", async(req,res) => {
 
     try{ 
         
-        const searchQuery = req.params.seachQuery
+        const searchQuery = req.params.searchQuery
 
         const getpayment = await payment.find({
-            amount: new RegExp(searchQuery, "i")
+            notes: new RegExp(searchQuery, "i")
         })
     
     
