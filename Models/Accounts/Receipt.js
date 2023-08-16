@@ -3,15 +3,12 @@ const Schema = mongoose.Schema
 
 
 const ReceiptSchema = new Schema({
-    amount:{
-        type:Number,
-        required:true
-    },
+   
     receiptNumber:{
         type:String,
         required:true
     },
-    note:{
+    name:{
         type:String,
         default:""
     },
