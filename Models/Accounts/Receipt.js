@@ -7,6 +7,10 @@ const ReceiptSchema = new Schema({
         type:Number,
         required:true
     },
+    receiptNumber:{
+        type:String,
+        required:true
+    },
     note:{
         type:String,
         default:""
