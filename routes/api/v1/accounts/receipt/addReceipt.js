@@ -34,16 +34,15 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function getreceiptObj(req,type){
 
     let newReceipt = {}
-    if(req.body.amount) {
-        newReceipt.amount = req.body.amount
+    if(req.body.receiptNumber) {
+        newReceipt.receiptNumber = req.body.receiptNumber
     }
-    if(req.body.note) {
-        newReceipt.note = req.body.note
+    if(req.body.name) {
+        newReceipt.name = req.body.name
     }
     if(req.body.date) {
         newReceipt.date = req.body.date
     }
-   
 
     return newReceipt
 }
