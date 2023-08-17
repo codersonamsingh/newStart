@@ -12,7 +12,7 @@ router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getreceipt = await receipt.find()
+    const getReceipt = await Receipt.find()
 
 
      res.json({
@@ -39,7 +39,7 @@ router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getreceipt = await receipt.findById(req.params.id)
+        const getReceipt = await Receipt.findById(req.params.id)
     
     
          res.json({
