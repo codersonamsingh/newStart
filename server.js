@@ -10,6 +10,11 @@ const upload = require("express-fileupload")
 //bring all route
 const addPayment = require("./routes/api/v1/accounts/payment/addPayment");
 const getpayment = require("./routes/api/v1/accounts/payment/getpayment")
+const addReceipt = require("./routes/api/v1/accounts/receipt/addReceipt")
+const getReceipt = require("./routes/api/v1/accounts/receipt/getReceipt")
+
+
+
 
 const app = express();
 app.use(upload({useTempfiles:true}))
