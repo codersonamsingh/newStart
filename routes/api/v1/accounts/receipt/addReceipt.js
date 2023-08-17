@@ -13,10 +13,9 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
-
 })
 //@type POST
-//@routes/api/v1/accounts/receipt/addreceipt/id:
+//@routes/api/v1/accounts/receipt/addReceipt/id:
 //@des crete Update receipt
 //@access public
 router.post("/:id",async (req,res) => {
