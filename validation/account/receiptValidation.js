@@ -7,7 +7,6 @@ const validateOnCreate = async(req,res,next) => {
             varient: "error"
         })
     }
-
     next();
 }
 
