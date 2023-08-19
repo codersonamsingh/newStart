@@ -8,7 +8,7 @@ constDocumentSchema = new Schema({
         type:String,
         required:true
     },
-    name:{
+    documentName:{
         type:String,
         default:""
     },
