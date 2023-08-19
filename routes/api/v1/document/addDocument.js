@@ -1,49 +1,49 @@
 const express = require("express");
-const Receipt = require("../../../../../Models/Accounts/Receipt");
+const Document = require("../../../../../Models/Accounts/Document");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/receiptValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/documentValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/receipt/addReceipt
-//@des crete New receipt
+//@routes/api/v1/accounts/document/addDocument
+//@des crete New document
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
 })
 //@type POST
-//@routes/api/v1/accounts/receipt/addReceipt/id:
-//@des crete Update receipt
+//@routes/api/v1/accounts/document/addDocument/id:
+//@des crete Update document
 //@access public
 router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/receipt/addreceipt/deleteOne/id:
-//@des Delete receipt
+//@route / api/v1/accounts/document/adddocument/deleteOne/id:
+//@des Delete document
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
     })
 
     
-async function getreceiptObj(req,type){
+async function getdocumentObj(req,type){
 
-    let newReceipt = {}
-    if(req.body.receiptNumber) {
-        newReceipt.receiptNumber = req.body.receiptNumber
+    let newDocument = {}
+    if(req.body.documentNumber) {
+        newDocument.documentNumber = req.body.documentNumber
     }
     if(req.body.name) {
-        newReceipt.name = req.body.name
+        newDocument.name = req.body.name
     }
     if(req.body.date) {
-        newReceipt.date = req.body.date
+        newDocument.date = req.body.date
     }
 
-    return newReceipt
+    return newDocument
 }
     
 module.exports = router;
