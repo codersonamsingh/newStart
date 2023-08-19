@@ -12,6 +12,8 @@ const addPayment = require("./routes/api/v1/accounts/payment/addPayment");
 const getpayment = require("./routes/api/v1/accounts/payment/getpayment");
 const addReceipt = require("./routes/api/v1/accounts/receipt/addReceipt");
 const getReceipt = require("./routes/api/v1/accounts/receipt/getReceipt")
+app.use("/api/v1/accounts/document/addDocument",addDocument)
+app.use("/api/v1/accounts/document/getDocument",getDocument)
 
 const app = express();
 app.use(upload({useTempfiles:true}))
