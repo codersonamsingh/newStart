@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-const ReceiptSchema = new Schema({
+constDocumentSchema = new Schema({
    
-    receiptNumber:{
+   documentNumber:{
         type:String,
         required:true
     },
@@ -17,4 +17,4 @@ const ReceiptSchema = new Schema({
         default: Date.now
     }
 });
-module.exports = Receipt = mongoose.model("Receipt",ReceiptSchema)5ty       srt5fggggggggggggggggggggg67y5t
+module.exports =Document = mongoose.model("Document",DocumentSchema)
