@@ -1,9 +1,9 @@
 const validateOnCreate = async(req,res,next) => {
 
-    if(!req.body?.amount){
+    if(!req.body?.documentNumber){
 
        return res.status(400).json({
-            message: "Amount Required",
+            message: "",
             varient: "error"
         })
     }
