@@ -17,16 +17,22 @@ router.post("/",validateOnCreate, async(req,res) =>{
         documentObj.number = req.body.number
     }
     if(req.body.name) {
-        newDocument.name = req.body.name
+        documentObj.name = req.body.name
     }
     if(req.body.date) {
-        newDocument.date = req.body.date
+        documentObj.date = req.body.date
     }
 
-    
+    await new Document(documentObj)
+      .save();
+      
+      res.statusCode(201).json({
+        message: "Document Added",
+        varient : "success"
+      })
 }
 
-})
+)
 //@type POST
 //@routes/api/v1/accounts/document/addDocument/id:
 //@des crete Update document
