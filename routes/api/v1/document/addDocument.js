@@ -12,18 +12,10 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
-    let documentObj = {}
-    if(req.body.number) {
-        documentObj.number = req.body.number
-    }
-    if(req.body.name) {
-        documentObj.name = req.body.name
-    }
-    if(req.body.date) {
-        documentObj.date = req.body.date
-    }
 
-    await new Document(documentObj)
+
+    
+    await new Document(new document)
       .save();
       
       res.statusCode(201).json({
@@ -50,17 +42,17 @@ router.delete("/deleteOne/:id",async(req,res) => {
     })
 
     
-async function getdocumentObj(req,type){
+async function getDocumentObj(req,type){
 
-    let newDocument = {}
-    if(req.body.documentNumber) {
-        newDocument.documentNumber = req.body.documentNumber
+    let newdocument = {}
+    if(req.body.number) {
+        new document.number = req.body.number
     }
     if(req.body.name) {
-        newDocument.name = req.body.name
+        new document.name = req.body.name
     }
     if(req.body.date) {
-        newDocument.date = req.body.date
+        new document.date = req.body.date
     }
 
     return newDocument
