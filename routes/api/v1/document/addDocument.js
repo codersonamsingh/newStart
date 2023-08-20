@@ -44,7 +44,7 @@ router.delete("/deleteOne/:id",async(req,res) => {
     
 async function getDocumentObj(req,type){
 
-    let newdocument = {}
+    let newDocument = {}
     if(req.body.number) {
         new document.number = req.body.number
     }
