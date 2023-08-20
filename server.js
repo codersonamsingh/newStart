@@ -41,7 +41,7 @@ require("./strategies/jsonwtStrategy")(passport)
 
 
 //call all route
-app.use("/api/v1/accounts/payment/addPayment",addPayment)
+app.use("/api/v1/accounts/payment/addPayment",addPayment);
 app.use("/api/v1/accounts/payment/getpayment",getpayment)
 app.use("/api/v1/accounts/receipt/addReceip",addReceipt)
 app.use("/api/v1/accounts/receipt/getReceip",getReceipt)
