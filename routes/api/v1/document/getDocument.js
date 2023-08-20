@@ -61,7 +61,7 @@ router.get("/getOne/:id", async(req,res) => {
 //@type Get search
 //@route /api/v1/account/document/getdocument/search/:seachQuery
 //@des to search document
-//@access public
+//@access public   
 router.get("/search/:searchQuery", async(req,res) => {
 
     try{ 

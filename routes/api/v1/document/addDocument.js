@@ -12,6 +12,19 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
+    let documentObj = {}
+    if(req.body.number) {
+        documentObj.number = req.body.number
+    }
+    if(req.body.name) {
+        newDocument.name = req.body.name
+    }
+    if(req.body.date) {
+        newDocument.date = req.body.date
+    }
+
+    
+}
 
 })
 //@type POST
@@ -19,6 +32,7 @@ router.post("/",validateOnCreate, async(req,res) =>{
 //@des crete Update document
 //@access public
 router.post("/:id",async (req,res) => {
+    
 })
 
 //@type Delete
