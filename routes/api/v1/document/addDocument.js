@@ -50,7 +50,16 @@ router.post("/:id",async (req,res) => {
             {$set: documentObj},
             {new:true}
         )
-
+        if(!document){
+            res.statusCode(500).json({
+                message: "document not found",
+                varient : "error"
+              })
+        }
+        res.statusCode(500).json({
+            message: "Document Updated Successfully",
+            varient : "error"
+          })
      
 
     } catch(error){
