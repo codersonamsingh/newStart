@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-constDocumentSchema = new Schema({
+const DocumentSchema = new Schema({
    
    documentNumber:{
         type:String,

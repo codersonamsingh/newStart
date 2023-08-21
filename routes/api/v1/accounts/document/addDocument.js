@@ -110,13 +110,13 @@ async function getDocumentObj(req,type){
 
     let newDocument = {}
     if(req.body.number) {
-        new document.number = req.body.number
+         document.number = req.body.number
     }
     if(req.body.name) {
-        new document.name = req.body.name
+         document.name = req.body.name
     }
     if(req.body.date) {
-        new document.date = req.body.date
+         document.date = req.body.date
     }
 
     return newDocument
