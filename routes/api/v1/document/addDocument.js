@@ -78,8 +78,27 @@ router.post("/:id",async (req,res) => {
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
-    })
 
+    try{
+        const document = await Document.findIdAndRemove(req.params.id);
+        if(!document){
+            res.statusCode(500).json({
+                message: "document not found",
+                varient : "error"
+              })
+        }
+        res.statusCode(500).json({
+            message: "Document Updated Successfully",
+            varient : "error"
+          })
+     
+
+    }
+    catch(error){
+
+    }
+    })
+    
     
 async function getDocumentObj(req,type){
 
