@@ -13,9 +13,9 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
-const documentObj = await getDocumentObj(req,"create")
-
     try{
+        const documentObj = await getDocumentObj(req,"create")
+
      await new Document(documentObj)
       .save();
       
@@ -23,8 +23,13 @@ const documentObj = await getDocumentObj(req,"create")
         message: "Document Added",
         varient : "success"
       })
-    } catch(error){
 
+    } catch(error){
+        console.log(error)
+        res.statusCode(500).json({
+        message: "Internal server error",
+        varient : "error"
+      })
     }
     
 
@@ -36,6 +41,25 @@ const documentObj = await getDocumentObj(req,"create")
 //@des crete Update document
 //@access public
 router.post("/:id",async (req,res) => {
+    
+    try{
+        const documentObj = await getDocumentObj(req,"update")
+
+        const document = await Document.findOneAndUpdate(
+            {id:req.params.id},
+            {$set: documentObj},
+            {new:true}
+        )
+
+     
+
+    } catch(error){
+        console.log(error)
+        res.statusCode(500).json({
+        message: "Internal server error",
+        varient : "error"
+      })
+    }
     
 })
 
