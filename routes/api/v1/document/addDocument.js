@@ -14,14 +14,20 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 router.post("/",validateOnCreate, async(req,res) =>{
 
 const documentObj = await getDocumentObj(req,"create")
-    
-    await new Document(new document)
+
+    try{
+     await new Document(documentObj)
       .save();
       
       res.statusCode(201).json({
         message: "Document Added",
         varient : "success"
       })
+    } catch(error){
+
+    }
+    
+
 }
 
 )
