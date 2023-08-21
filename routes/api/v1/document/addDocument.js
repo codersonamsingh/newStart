@@ -13,7 +13,7 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
-
+const documentObj = await getDocumentObj(req,"create")
     
     await new Document(new document)
       .save();
