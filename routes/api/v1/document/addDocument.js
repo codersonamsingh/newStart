@@ -88,13 +88,19 @@ router.delete("/deleteOne/:id",async(req,res) => {
               })
         }
         res.statusCode(500).json({
-            message: "Document Updated Successfully",
+            message: "Document Deleted Successfully",
             varient : "error"
           })
      
 
     }
     catch(error){
+        console.log(error)
+        res.statusCode(500).json({
+            message: "Internal Server error",
+            varient : "error"
+          })
+     
 
     }
     })
