@@ -1,14 +1,14 @@
 const express = require("express");
-const Payment = require("../../../../../Models/Accounts/Payment");
+const Hostel = require("../../../../../Models/Accounts/Hostel");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/paymentValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hostelValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/payment/addpayment
-//@des crete New payment
+//@routes/api/v1/accounts/hostel/addhostel
+//@des crete New hostel
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
@@ -16,36 +16,36 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 })
 //@type POST
-//@routes/api/v1/accounts/payment/addpayment/id:
-//@des crete Update payment
+//@routes/api/v1/accounts/hostel/addhostel/id:
+//@des crete Update hostel
 //@access public
 router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/payment/addpayment/deleteOne/id:
-//@des Delete payment
+//@route / api/v1/accounts/hostel/addhostel/deleteOne/id:
+//@des Delete hostel
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
     })
 
     
-async function getpaymentObj(req,type){
+async function gethostelObj(req,type){
 
-    let newPayment = {}
+    let newHostel = {}
     if(req.body.amount) {
-        newPayment.amount = req.body.amount
+        newHostel.amount = req.body.amount
     }
     if(req.body.note) {
-        newPayment.note = req.body.note
+        newHostel.note = req.body.note
     }
     if(req.body.date) {
-        newPayment.date = req.body.date
+        newHostel.date = req.body.date
     }
    
 
-    return newPayment
+    return newHostel
 }
     
 module.exports = router;
