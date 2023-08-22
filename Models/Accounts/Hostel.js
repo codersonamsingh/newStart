@@ -14,11 +14,15 @@ const HostelSchema = new Schema({
     },
    
     address:{
-        type:Date,
-        default: Date.now
+        type:String,
+        default:""
     },
     studentName:{
-        type:Date,
+        type:String,
+        default:""
+    },
+    class:{
+        type:String,
         default:""
     },
 });
