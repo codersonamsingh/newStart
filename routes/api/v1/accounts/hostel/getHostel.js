@@ -1,23 +1,23 @@
-//Read = 1. Get ALL payment , 2. get one payment by Id, 3. Search Payment with note or amount
+//Read = 1. Get ALL document , 2. get one document by Id, 3. Search Document with note or amount
 
 const express = require("express");
-const payment = require("../../../../../Models/Accounts/Payment");
+const Document = require("../../../../../Models/Accounts/Document");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/payment/getpayment/getAll
-//@des get all  payment
+//@route /api/v1/account/document/getdocument/getAll
+//@des get all  document
 //@access public
 router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getpayment = await payment.find()
+    const getDocument = await Document.find()
 
 
      res.json({
-        data:getpayment,
-        message:"payment loaded",
+        data:getdocument,
+        message:"document loaded",
         varient:"success"
      })
 
@@ -32,19 +32,19 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/payment/getpayment/getOne/:id
-//@des get one payment
+//@route /api/v1/account/document/getdocument/getOne/:id
+//@des get one document
 //@access public
 router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getpayment = await payment.findById(req.params.id)
+        const getDocument = await Document.findById(req.params.id)
     
     
          res.json({
-            data:getpayment,
-            message:"payment loaded",
+            data:getdocument,
+            message:"document loaded",
             varient:"success"
          })
     
@@ -59,25 +59,25 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/payment/getpayment/search/:seachQuery
-//@des to search payment
-//@access public
+//@route /api/v1/account/document/getdocument/search/:seachQuery
+//@des to search document
+//@access public   
 router.get("/search/:searchQuery", async(req,res) => {
 
     try{ 
         
         const searchQuery = req.params.searchQuery
 
-        const getpayment = await payment.find({
+        const getDocument = await Document.find({
             $or:[
-                {note: new RegExp(searchQuery, "i")},
-                {amount: (Number(searchQuery))}
+                {documentNumber: new RegExp(searchQuery, "i")},
+                {name: (Number(searchQuery))}
             ]
         })
     
          res.json({
-            data:getpayment,
-            message:"payment loaded",
+            data:getdocument,
+            message:"document loaded",
             varient:"success"
          })
     
