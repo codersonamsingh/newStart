@@ -1,26 +1,26 @@
 const express = require("express");
-const Document = require("../../../../../Models/Accounts/Document");
+const Hostel = require("../../../../../Models/Accounts/Hostel");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/documentValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hostelValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/document/addDocument
-//@des crete New document
+//@routes/api/v1/accounts/hostel/addHostel
+//@des crete New hostel
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const documentObj = await getDocumentObj(req,"create")
+        const hostelObj = await getHostelObj(req,"create")
 
-     await new Document(documentObj)
+     await new Hostel(hostelObj)
       .save();
       
       res.statusCode(201).json({
-        message: "Document Added",
+        message: "Hostel Added",
         varient : "success"
       })
 
@@ -37,27 +37,27 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 )
 //@type POST
-//@routes/api/v1/accounts/document/addDocument/id:
-//@des crete Update document
+//@routes/api/v1/accounts/hostel/addHostel/id:
+//@des crete Update hostel
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        const documentObj = await getDocumentObj(req,"update")
+        const hostelObj = await getHostelObj(req,"update")
 
-        const document = await Document.findOneAndUpdate(
+        const hostel = await Hostel.findOneAndUpdate(
             {id:req.params.id},
-            {$set: documentObj},
+            {$set: hostelObj},
             {new:true}
         )
-        if(!document){
+        if(!hostel){
             res.statusCode(500).json({
-                message: "document not found",
+                message: "hostel not found",
                 varient : "error"
               })
         }
         res.statusCode(500).json({
-            message: "Document Updated Successfully",
+            message: "Hostel Updated Successfully",
             varient : "error"
           })
      
@@ -73,22 +73,22 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/document/adddocument/deleteOne/id:
-//@des Delete document
+//@route / api/v1/accounts/hostel/addhostel/deleteOne/id:
+//@des Delete hostel
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        const document = await Document.findIdAndRemove(req.params.id);
-        if(!document){
+        const hostel = await Hostel.findIdAndRemove(req.params.id);
+        if(!hostel){
             res.statusCode(500).json({
-                message: "document not found",
+                message: "hostel not found",
                 varient : "error"
               })
         }
         res.statusCode(500).json({
-            message: "Document Deleted Successfully",
+            message: "Hostel Deleted Successfully",
             varient : "error"
           })
      
@@ -106,20 +106,20 @@ router.delete("/deleteOne/:id",async(req,res) => {
     })
     
     
-async function getDocumentObj(req,type){
+async function getHostelObj(req,type){
 
-    let newDocument = {}
+    let newHostel = {}
     if(req.body.number) {
-         document.number = req.body.number
+         hostel.number = req.body.number
     }
     if(req.body.name) {
-         document.name = req.body.name
+         hostel.name = req.body.name
     }
     if(req.body.date) {
-         document.date = req.body.date
+         hostel.date = req.body.date
     }
 
-    return newDocument
+    return newHostel
 }
     
 module.exports = router;
