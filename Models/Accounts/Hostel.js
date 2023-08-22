@@ -4,17 +4,22 @@ const Schema = mongoose.Schema
 
 const HostelSchema = new Schema({
    
-   hostelNumber:{
+   hostelName:{
         type:String,
         required:true
     },
-    hostelName:{
+    fatherName:{
         type:String,
         default:""
     },
-    date:{
+   
+    address:{
         type:Date,
         default: Date.now
-    }
+    },
+    studentName:{
+        type:Date,
+        default:""
+    },
 });
 module.exports =Hostel = mongoose.model("Hostel",HostelSchema)
