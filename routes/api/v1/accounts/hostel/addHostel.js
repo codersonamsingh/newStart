@@ -109,8 +109,8 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function getHostelObj(req,type){
 
     let newHostel = {}
-    if(req.body.number) {
-         hostel.number = req.body.number
+    if(req.body.name) {
+         hostel.name = req.body.name
     }
     if(req.body.name) {
          hostel.name = req.body.name
