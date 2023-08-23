@@ -90,4 +90,4 @@ router.get("/search/:searchQuery", async(req,res) => {
         })
     }
     })
-module.exports = router
+module.exports = router 

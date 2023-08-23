@@ -25,5 +25,13 @@ const HostelSchema = new Schema({
         type:String,
         default:""
     },
+    number:{
+        type:Number,
+        default:""
+    },
+    comingDate:{
+        type:Date,
+        default:Date.now
+    },
 });
 module.exports =Hostel = mongoose.model("Hostel",HostelSchema)
