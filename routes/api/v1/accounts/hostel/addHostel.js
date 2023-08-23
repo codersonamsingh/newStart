@@ -125,6 +125,13 @@ async function getHostelObj(req,type){
  if(req.body.class) {
         newHostel.class = req.body.class
    }
+   if(req.body.number) {
+    newHostel.number = req.body.number
+}
+if(req.body.comingDate) {
+  newHostel.comingDate = req.body.comingDate
+}
+
 
     return newHostel
 }
