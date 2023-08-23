@@ -2,21 +2,21 @@ const express = require("express");
 const Hostel = require("../../../../../Models/Accounts/Hostel");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hostelValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/newHostelValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/hostel/addHostel
-//@des crete New hostel
+//@routes/api/v1/accounts/newHostel/addHostel
+//@des crete New newHostel
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const hostelObj = await getHostelObj(req,"create")
+        const newHostelObj = await getHostelObj(req,"create")
 
-     await new Hostel(hostelObj)
+     await new Hostel(newHostelObj)
       .save();
       
       res.statusCode(201).json({
@@ -37,22 +37,22 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 )
 //@type POST
-//@routes/api/v1/accounts/hostel/addHostel/id:
-//@des crete Update hostel
+//@routes/api/v1/accounts/newHostel/addHostel/id:
+//@des crete Update newHostel
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        const hostelObj = await getHostelObj(req,"update")
+        const newHostelObj = await getHostelObj(req,"update")
 
-        const hostel = await Hostel.findOneAndUpdate(
+        const newHostel = await Hostel.findOneAndUpdate(
             {id:req.params.id},
-            {$set: hostelObj},
+            {$set: newHostelObj},
             {new:true}
         )
-        if(!hostel){
+        if(!newHostel){
             res.statusCode(500).json({
-                message: "hostel not found",
+                message: "newHostel not found",
                 varient : "error"
               })
         }
@@ -73,17 +73,17 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/hostel/addhostel/deleteOne/id:
-//@des Delete hostel
+//@route / api/v1/accounts/newHostel/addnewHostel/deleteOne/id:
+//@des Delete newHostel
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        const hostel = await Hostel.findIdAndRemove(req.params.id);
-        if(!hostel){
+        const newHostel = await Hostel.findIdAndRemove(req.params.id);
+        if(!newHostel){
             res.statusCode(500).json({
-                message: "hostel not found",
+                message: "newHostel not found",
                 varient : "error"
               })
         }
@@ -109,21 +109,21 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function getHostelObj(req,type){
 
     let newHostel = {}
-    if(req.body. hostelName) {
-         hostel.name = req.body.name
+    if(req.body. newHostelName) {
+        newHostel.name = req.body.name
     }
     if(req.body.fatherName) {
-         hostel.name = req.body.address
+         newHostel.name = req.body.address
     }
     if(req.body.address) {
-         hostel.date = req.body.date
+         newHostel.date = req.body.date
     }
 
     if(req.body.studentName) {
-        hostel.date = req.body.date
+        newHostel.date = req.body.date
    }
  if(req.body.studentName) {
-        hostel.date = req.body.date
+        newHostel.date = req.body.date
    }
 
     return newHostel
