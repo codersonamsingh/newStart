@@ -120,10 +120,10 @@ async function getHostelObj(req,type){
     }
 
     if(req.body.studentName) {
-        newHostel.date = req.body.date
+        newHostel.studentName = req.body.studentName
    }
- if(req.body.studentName) {
-        newHostel.date = req.body.date
+ if(req.body.class) {
+        newHostel.class = req.body.class
    }
 
     return newHostel
