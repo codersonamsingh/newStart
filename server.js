@@ -49,6 +49,9 @@ app.use("/api/v1/accounts/receipt/addReceip",addReceipt)
 app.use("/api/v1/accounts/receipt/getReceip",getReceipt)
 app.use("/api/v1/accounts/document/addDocument",addDocument)
 app.use("/api/v1/accounts/document/getDocument",getDocument)
+app.use("/api/v1/accounts/hostel/addHostel",addHostel)
+app.use("/api/v1/accounts/hostel/getHostel",getHostel)
+
 
 //data base connection
 const db = require("./setup/myurl").mongoURL;
