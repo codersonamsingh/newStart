@@ -110,13 +110,13 @@ async function getHostelObj(req,type){
 
     let newHostel = {}
     if(req.body. newHostelName) {
-        newHostel.name = req.body.name
+        newHostel.hostelName = req.body.hostelName
     }
     if(req.body.fatherName) {
-         newHostel.name = req.body.address
+         newHostel.fatherName = req.body.fatherName
     }
     if(req.body.address) {
-         newHostel.date = req.body.date
+         newHostel.address = req.body.address
     }
 
     if(req.body.studentName) {
