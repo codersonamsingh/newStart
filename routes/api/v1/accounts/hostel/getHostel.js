@@ -32,7 +32,7 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/hostel/gethostel/getOne/:id
+//@route /api/v1/account/hostel/getHostel/getOne/:id
 //@des get one hostel
 //@access public
 router.get("/getOne/:id", async(req,res) => {
@@ -43,7 +43,7 @@ router.get("/getOne/:id", async(req,res) => {
     
     
          res.json({
-            data:gethostel,
+            data:getHostel,
             message:"hostel loaded",
             varient:"success"
          })
@@ -59,7 +59,7 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/hostel/gethostel/search/:seachQuery
+//@route /api/v1/account/hostel/getHostel/search/:seachQuery
 //@des to search hostel
 //@access public   
 router.get("/search/:searchQuery", async(req,res) => {
