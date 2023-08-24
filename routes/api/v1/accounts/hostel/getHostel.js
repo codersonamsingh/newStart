@@ -70,12 +70,12 @@ router.get("/search/:searchQuery", async(req,res) => {
 
         const getHostel = await Hostel.find({
             $or:[
-                {hostelName: new RegExp(searchQuery, "i")},
+                
                 {fatherName: new RegExp(searchQuery, "i")},
-                {address: new RegExp(searchQuery, "i")},
+                
                 {studentName: new RegExp(searchQuery, "i")},
                 {number: new RegExp(searchQuery, "i")},
-                {comingDate: new RegExp(searchQuery, "i")},
+                
             ]
         })
     
