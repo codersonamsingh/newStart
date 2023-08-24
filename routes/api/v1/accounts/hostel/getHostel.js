@@ -5,7 +5,7 @@ const Hostel = require("../../../../../Models/Accounts/Hostel");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/hostel/gethostel/getAll
+//@route /api/v1/accounts/hostel/getHostel/getAll
 //@des get all  hostel
 //@access public
 router.get("/getAll", async(req,res) => {
