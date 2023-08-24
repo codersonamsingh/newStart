@@ -2,7 +2,7 @@ const express = require("express");
 const Hostel = require("../../../../../Models/Accounts/Hostel");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/newHostelValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hostelValidation")
 
 //CRUD = crete Read Update Delete
 
@@ -14,7 +14,7 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const newHostelObj = await getHostelObj(req,"create")
+        const HostelObj = await getHostelObj(req,"create")
 
      await new Hostel(newHostelObj)
       .save();
