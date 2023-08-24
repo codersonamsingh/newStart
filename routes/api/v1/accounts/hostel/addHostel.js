@@ -43,7 +43,7 @@ router.post("/",validateOnCreate, async(req,res) =>{
 router.post("/:id",async (req,res) => {
     
     try{
-        const newHostelObj = await getHostelObj(req,"update")
+        const HostelObj = await getHostelObj(req,"update")
 
         const newHostel = await Hostel.findOneAndUpdate(
             {id:req.params.id},
