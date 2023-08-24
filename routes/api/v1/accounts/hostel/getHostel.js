@@ -1,23 +1,23 @@
-//Read = 1. Get ALL document , 2. get one document by Id, 3. Search Document with note or amount
+//Read = 1. Get ALL hostel , 2. get one hostel by Id, 3. Search Hostel with note or amount
 
 const express = require("express");
-const Document = require("../../../../../Models/Accounts/Document");
+const Hostel = require("../../../../../Models/Accounts/Hostel");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/document/getdocument/getAll
-//@des get all  document
+//@route /api/v1/account/hostel/gethostel/getAll
+//@des get all  hostel
 //@access public
 router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getDocument = await Document.find()
+    const getHostel = await Hostel.find()
 
 
      res.json({
-        data:getdocument,
-        message:"document loaded",
+        data:gethostel,
+        message:"hostel loaded",
         varient:"success"
      })
 
@@ -32,19 +32,19 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/document/getdocument/getOne/:id
-//@des get one document
+//@route /api/v1/account/hostel/gethostel/getOne/:id
+//@des get one hostel
 //@access public
 router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getDocument = await Document.findById(req.params.id)
+        const getHostel = await Hostel.findById(req.params.id)
     
     
          res.json({
-            data:getdocument,
-            message:"document loaded",
+            data:gethostel,
+            message:"hostel loaded",
             varient:"success"
          })
     
@@ -59,8 +59,8 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/document/getdocument/search/:seachQuery
-//@des to search document
+//@route /api/v1/account/hostel/gethostel/search/:seachQuery
+//@des to search hostel
 //@access public   
 router.get("/search/:searchQuery", async(req,res) => {
 
@@ -68,7 +68,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         
         const searchQuery = req.params.searchQuery
 
-        const getDocument = await Document.find({
+        const getHostel = await Hostel.find({
             $or:[
                 {hostelName: new RegExp(searchQuery, "i")},
                 {fatherName: new RegExp(searchQuery, "i")},
@@ -80,8 +80,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         })
     
          res.json({
-            data:getdocument,
-            message:"document loaded",
+            data:gethostel,
+            message:"hostel loaded",
             varient:"success"
          })
     
