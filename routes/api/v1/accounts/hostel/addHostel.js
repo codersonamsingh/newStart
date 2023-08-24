@@ -16,17 +16,17 @@ router.post("/",validateOnCreate, async(req,res) =>{
     try{
         const HostelObj = await getHostelObj(req,"create")
 
-     await new Hostel(newHostelObj)
+     await new Hostel(HostelObj)
       .save();
       
-      res.statusCode(201).json({
+      res.status(201).json({
         message: "Hostel Added",
         varient : "success"
       })
 
     } catch(error){
         console.log(error)
-        res.statusCode(500).json({
+        res.status(500).json({
         message: "Internal server error",
         varient : "error"
       })
@@ -109,7 +109,7 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function getHostelObj(req,type){
 
     let newHostel = {}
-    if(req.body. newHostelName) {
+    if(req.body.hostelName) {
         newHostel.hostelName = req.body.hostelName
     }
     if(req.body.fatherName) {
