@@ -8,24 +8,24 @@ const HospitalSchema = new Schema({
         type:String,
         required:true
     },
-    fatherName:{
+    patientName:{
         type:String,
         default:""
     },
    
-    address:{
+    patientAddress:{
         type:String,
         default:""
     },
-    studentName:{
+    bloodHeart:{
         type:String,
         default:""
     },
-    class:{
+    healthCheckUp:{
         type:String,
         default:""
     },
-    number:{
+    hospitalFee:{
         type:Number,
         default:""
     },
