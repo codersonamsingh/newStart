@@ -1,5 +1,5 @@
 const express = require("express");
-const Document = require("../../../../../Models/Accounts/Document");
+constHospital = require("../../../../../Models/Accounts/Document");
 const router = express.Router();
 
 const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/documentValidation")
@@ -8,15 +8,15 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 //@type POST
 //@routes/api/v1/accounts/document/addDocument
-//@des crete New document
+//@des crete Newhospital
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const documentObj = await getDocumentObj(req,"create")
+        consthospitalObj = await getDocumentObj(req,"create")
 
-     await new Document(documentObj)
+     await newHospital(documentObj)
       .save();
       
       res.statusCode(201).json({
@@ -38,16 +38,16 @@ router.post("/",validateOnCreate, async(req,res) =>{
 )
 //@type POST
 //@routes/api/v1/accounts/document/addDocument/id:
-//@des crete Update document
+//@des crete Updatehospital
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        const documentObj = await getDocumentObj(req,"update")
+        consthospitalObj = await getDocumentObj(req,"update")
 
-        const document = await Document.findOneAndUpdate(
+        consthospital = awaitHospital.findOneAndUpdate(
             {id:req.params.id},
-            {$set: documentObj},
+            {$set:hospitalObj},
             {new:true}
         )
         if(!document){
@@ -74,13 +74,13 @@ router.post("/:id",async (req,res) => {
 
 //@type Delete
 //@route / api/v1/accounts/document/adddocument/deleteOne/id:
-//@des Delete document
+//@des Deletehospital
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        const document = await Document.findIdAndRemove(req.params.id);
+        consthospital = awaitHospital.findIdAndRemove(req.params.id);
         if(!document){
             res.statusCode(500).json({
                 message: "document not found",
@@ -109,14 +109,23 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function getDocumentObj(req,type){
 
     let newDocument = {}
-    if(req.body.number) {
-         document.number = req.body.number
+    if(req.body.hospitalName) {
+        hospital.number = req.body.number
     }
-    if(req.body.name) {
-         document.name = req.body.name
+    if(req.body.patientName) {
+        hospital.patientName = req.body.patientName
     }
-    if(req.body.date) {
-         document.date = req.body.date
+    if(req.body.patientAddress) {
+        hospital.patientAddress = req.body.patientAddress
+    }
+     if(req.body.bloodHeart) {
+        hospital.bloodHeart = req.body.bloodHeart
+    }
+     if(req.body.date) {
+        hospital.date = req.body.date
+    }
+     if(req.body.date) {
+        hospital.date = req.body.date
     }
 
     return newDocument
