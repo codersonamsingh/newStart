@@ -32,8 +32,8 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function gethospitalObj(req,type){
 
     let newHospital = {}
-    if(req.body.amount) {
-        newHospital.amount = req.body.amount
+    if(req.body.hospitalName) {
+        newHospital.hospitalName = req.body.amount
     }
     if(req.body.note) {
         newHospital.note = req.body.note
