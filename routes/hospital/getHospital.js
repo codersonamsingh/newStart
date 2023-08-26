@@ -1,7 +1,7 @@
-//Read = 1. Get ALL hospital , 2. get one hospital by Id, 3. Search Receipt with note or amount
+//Read = 1. Get ALL hospital , 2. get one hospital by Id, 3. Search Hospital with note or amount
 
 const express = require("express");
-const Receipt = require("../../../../../Models/Accounts/Receipt");
+const Hospital = require("../../../../../Models/Accounts/Hospital");
 const router = express.Router();
 
 //@type Get
@@ -12,7 +12,7 @@ router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getReceipt = await Receipt.find()
+    const getHospital = await Hospital.find()
 
 
      res.json({
@@ -39,7 +39,7 @@ router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getReceipt = await Receipt.findById(req.params.id)
+        const getHospital = await Hospital.findById(req.params.id)
     
     
          res.json({
@@ -68,7 +68,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         
         const searchQuery = req.params.searchQuery
 
-        const getReceipt = await Receipt.find({
+        const getHospital = await Hospital.find({
             $or:[
                 {hospitalNumber: new RegExp(searchQuery, "i")},
                 {name: (Number(searchQuery))}
