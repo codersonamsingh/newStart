@@ -59,6 +59,7 @@ app.use("/api/v1/accounts/document/addDocument",addDocument)
 app.use("/api/v1/accounts/document/getDocument",getDocument)
 app.use("/api/v1/accounts/hostel/addHostel",addHostel)
 app.use("/api/v1/accounts/hostel/getHostel",getHostel)
+app.use("/api/v1/accounts/hospital/addHospital",addHospital)
 app.use("/api/v1/accounts/hospital/getHospital",getHospital)
 
 
