@@ -1,26 +1,26 @@
 const express = require("express");
-constHospital = require("../../../../../Models/Accounts/Document");
+constHospital = require("../../../../../Models/Accounts/Hospital");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/documentValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hospitalValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/document/addDocument
+//@routes/api/v1/accounts/hospital/addHospital
 //@des crete Newhospital
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        consthospitalObj = await getDocumentObj(req,"create")
+        consthospitalObj = await getHospitalObj(req,"create")
 
-     await newHospital(documentObj)
+     await newHospital(hospitalObj)
       .save();
       
       res.statusCode(201).json({
-        message: "Document Added",
+        message: "Hospital Added",
         varient : "success"
       })
 
@@ -37,27 +37,27 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 )
 //@type POST
-//@routes/api/v1/accounts/document/addDocument/id:
+//@routes/api/v1/accounts/hospital/addHospital/id:
 //@des crete Updatehospital
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        consthospitalObj = await getDocumentObj(req,"update")
+        consthospitalObj = await getHospitalObj(req,"update")
 
         consthospital = awaitHospital.findOneAndUpdate(
             {id:req.params.id},
             {$set:hospitalObj},
             {new:true}
         )
-        if(!document){
+        if(!hospital){
             res.statusCode(500).json({
-                message: "document not found",
+                message: "hospital not found",
                 varient : "error"
               })
         }
         res.statusCode(500).json({
-            message: "Document Updated Successfully",
+            message: "Hospital Updated Successfully",
             varient : "error"
           })
      
@@ -73,7 +73,7 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/document/adddocument/deleteOne/id:
+//@route / api/v1/accounts/hospital/addhospital/deleteOne/id:
 //@des Deletehospital
 //@access public
 
@@ -81,14 +81,14 @@ router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
         consthospital = awaitHospital.findIdAndRemove(req.params.id);
-        if(!document){
+        if(!hospital){
             res.statusCode(500).json({
-                message: "document not found",
+                message: "hospital not found",
                 varient : "error"
               })
         }
         res.statusCode(500).json({
-            message: "Document Deleted Successfully",
+            message: "Hospital Deleted Successfully",
             varient : "error"
           })
      
@@ -106,9 +106,9 @@ router.delete("/deleteOne/:id",async(req,res) => {
     })
     
     
-async function getDocumentObj(req,type){
+async function getHospitalObj(req,type){
 
-    let newDocument = {}
+    let newHospital = {}
     if(req.body.hospitalName) {
         hospital.number = req.body.number
     }
@@ -124,11 +124,16 @@ async function getDocumentObj(req,type){
      if(req.body.healthCheckUp) {
         hospital.healthCheckUp = req.body.healthCheckUp
     }
-     if(req.body.date) {
-        hospital.date = req.body.date
+     if(req.body.hospitalFee) {
+        hospital. hospitalFee = req.body. hospitalFee
     }
+    if(req.body.comingDate) {
+        hospital.comingDate = req.body.comingDate
+    }
+    
 
-    return newDocument
+
+    return newHospital
 }
     
 module.exports = router;
