@@ -27,7 +27,7 @@ router.post("/",validateOnCreate, async(req,res) =>{
     } catch(error){
         console.log(error)
         res.statusCode(500).json({
-        message: "Internal server error",
+        message: "Internal Server error",
         varient : "error"
       })
     }

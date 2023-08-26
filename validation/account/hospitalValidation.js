@@ -1,6 +1,6 @@
 const validateOnCreate = async(req,res,next) => {
 
-    if(!req.body?.amount){
+    if(!req.body?.hospitalName){
 
        return res.status(400).json({
             message: "hospitalName Required",
