@@ -17,6 +17,10 @@ const getDocument = require("./routes/api/v1/accounts/document/getDocument");
 const getHostel = require("./routes/api/v1/accounts/hostel/getHostel");
 const addHostel = require("./routes/api/v1/accounts/hostel/addHostel");
 const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
+const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
+const getHospital = require("./routes/api/v1/accounts/hospital/getHospital");
+
+
 
 
 
@@ -55,6 +59,8 @@ app.use("/api/v1/accounts/document/addDocument",addDocument)
 app.use("/api/v1/accounts/document/getDocument",getDocument)
 app.use("/api/v1/accounts/hostel/addHostel",addHostel)
 app.use("/api/v1/accounts/hostel/getHostel",getHostel)
+app.use("/api/v1/accounts/hospital/getHospital",getHospital)
+
 
 
 //data base connection
