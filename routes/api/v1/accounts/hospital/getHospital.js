@@ -71,7 +71,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         const getHospital = await Hospital.find({
             $or:[
                 {hospitalName: new RegExp(searchQuery, "i")},
-                {patientName: (Number(searchQuery))}
+                {patientName: new RegExp(searchQuery, "i")},
+                
             ]
         })
     
