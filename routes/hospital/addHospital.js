@@ -121,8 +121,8 @@ async function getDocumentObj(req,type){
      if(req.body.bloodHeart) {
         hospital.bloodHeart = req.body.bloodHeart
     }
-     if(req.body.date) {
-        hospital.date = req.body.date
+     if(req.body.healthCheckUp) {
+        hospital.healthCheckUp = req.body.healthCheckUp
     }
      if(req.body.date) {
         hospital.date = req.body.date
