@@ -17,12 +17,7 @@ const getDocument = require("./routes/api/v1/accounts/document/getDocument");
 const getHostel = require("./routes/api/v1/accounts/hostel/getHostel");
 const addHostel = require("./routes/api/v1/accounts/hostel/addHostel");
 const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
-const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
 const getHospital = require("./routes/api/v1/accounts/hospital/getHospital");
-
-
-
-
 
 
 const app = express();
