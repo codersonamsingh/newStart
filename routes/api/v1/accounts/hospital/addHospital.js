@@ -113,22 +113,22 @@ async function getHospitalObj(req,type){
         newHospital.hospitalName = req.body.hospitalName
     }
     if(req.body.patientName) {
-        hospital.patientName = req.body.patientName
+        newHospital.patientName = req.body.patientName
     }
     if(req.body.patientAddress) {
-        hospital.patientAddress = req.body.patientAddress
+        newHospital.patientAddress = req.body.patientAddress
     }
      if(req.body.bloodHeart) {
-        hospital.bloodHeart = req.body.bloodHeart
+        newHospital.bloodHeart = req.body.bloodHeart
     }
      if(req.body.healthCheckUp) {
-        hospital.healthCheckUp = req.body.healthCheckUp
+        newHospital.healthCheckUp = req.body.healthCheckUp
     }
      if(req.body.hospitalFee) {
-        hospital. hospitalFee = req.body. hospitalFee
+        newHospital. hospitalFee = req.body. hospitalFee
     }
     if(req.body.comingDate) {
-        hospital.comingDate = req.body.comingDate
+        newHospital.comingDate = req.body.comingDate
     }
     
 
