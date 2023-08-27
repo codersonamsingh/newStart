@@ -110,7 +110,7 @@ async function getHospitalObj(req,type){
 
     let newHospital = {}
     if(req.body.hospitalName) {
-        hospital.name = req.body.number
+        hospital.hospitalName = req.body.hospitalName
     }
     if(req.body.patientName) {
         hospital.patientName = req.body.patientName
