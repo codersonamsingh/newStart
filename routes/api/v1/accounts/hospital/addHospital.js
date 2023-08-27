@@ -16,7 +16,7 @@ router.post("/",validateOnCreate, async(req,res) =>{
     try{
         consthospitalObj = await getHospitalObj(req,"create")
 
-     await newHospital(hospitalObj)
+     await new Hospital(hospitalObj)
       .save();
       
       res.statusCode(201).json({
