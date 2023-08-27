@@ -14,7 +14,7 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        consthospitalObj = await getHospitalObj(req,"create")
+        const hospitalObj = await getHospitalObj(req,"create")
 
      await new Hospital(hospitalObj)
       .save();
