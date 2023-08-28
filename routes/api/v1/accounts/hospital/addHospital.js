@@ -15,18 +15,18 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
         const hospitalObj = await getHospitalObj(req,"create")
-
+console.log(hospitalObj)
      await new Hospital(hospitalObj)
       .save();
       
-      res.statusCode(201).json({
+      res.status(201).json({
         message: "Hospital Added",
         varient : "success"
       })
 
     } catch(error){
         console.log(error)
-        res.statusCode(500).json({
+        res.status(500).json({
         message: "Internal Server error",
         varient : "error"
       })
@@ -51,12 +51,12 @@ router.post("/:id",async (req,res) => {
             {new:true}
         )
         if(!hospital){
-            res.statusCode(500).json({
+            res.status(500).json({
                 message: "hospital not found",
                 varient : "error"
               })
         }
-        res.statusCode(500).json({
+        res.status(500).json({
             message: "Hospital Updated Successfully",
             varient : "error"
           })
@@ -64,7 +64,7 @@ router.post("/:id",async (req,res) => {
 
     } catch(error){
         console.log(error)
-        res.statusCode(500).json({
+        res.status(500).json({
         message: "Internal server error",
         varient : "error"
       })
@@ -82,12 +82,12 @@ router.delete("/deleteOne/:id",async(req,res) => {
     try{
         consthospital = awaitHospital.findIdAndRemove(req.params.id);
         if(!hospital){
-            res.statusCode(500).json({
+            res.status(500).json({
                 message: "hospital not found",
                 varient : "error"
               })
         }
-        res.statusCode(500).json({
+        res.status(500).json({
             message: "Hospital Deleted Successfully",
             varient : "error"
           })
@@ -96,7 +96,7 @@ router.delete("/deleteOne/:id",async(req,res) => {
     }
     catch(error){
         console.log(error)
-        res.statusCode(500).json({
+        res.status(500).json({
             message: "Internal Server error",
             varient : "error"
           })
@@ -107,10 +107,9 @@ router.delete("/deleteOne/:id",async(req,res) => {
     
     
 async function getHospitalObj(req,type){
-
     let newHospital = {}
     if(req.body.hospitalName) {
-        Hospital.hospitalName = req.body.hospitalName
+        newHospital.hospitalName = req.body.hospitalName
     }
     if(req.body.patientName) {
         Hospital.patientName = req.body.patientName
@@ -125,7 +124,7 @@ async function getHospitalObj(req,type){
         Hospital.healthCheckUp = req.body.healthCheckUp
     }
      if(req.body.hospitalFee) {
-        Hospital. hospitalFee = req.body. hospitalFee
+        Hospital.hospitalFee = req.body. hospitalFee
     }
     if(req.body.comingDate) {
         Hospital.comingDate = req.body.comingDate
