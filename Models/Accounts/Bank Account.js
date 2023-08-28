@@ -4,11 +4,11 @@ const Schema = mongoose.Schema
 
 const HospitalSchema = new Schema({
    
-   hospitalName:{
+    bankName:{
         type:String,
         required:true
     },
-    patientName:{
+    :{
         type:String,
         default:""
     },
