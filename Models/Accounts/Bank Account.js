@@ -8,16 +8,16 @@ const HospitalSchema = new Schema({
         type:String,
         required:true
     },
-    :{
+    aadharCard:{
         type:String,
         default:""
     },
    
-    patientAddress:{
+    pinCard:{
         type:String,
         default:""
     },
-    bloodHeart:{
+    customberName:{
         type:String,
         default:""
     },
