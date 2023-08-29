@@ -13,7 +13,7 @@ const BankAccountSchema = new Schema({
         default:""
     },
    
-    pinCard:{
+    panCard:{
         type:String,
         default:""
     },
