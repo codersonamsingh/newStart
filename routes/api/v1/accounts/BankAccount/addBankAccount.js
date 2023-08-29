@@ -112,10 +112,10 @@ async function getBankAccountObj(req,type){
         newBankAccount.BankAccountName = req.body.BankAccountName
     }
     if(req.body.aadharCard) {
-        newBankAccount.panCard = req.body.patientName
+        newBankAccount.panCard = req.body.aadharCard
     }
-    if(req.body.patientAddress) {
-        newBankAccount.patientAddress = req.body.patientAddress
+    if(req.body.panCard   ) {
+        newBankAccount.panCard = req.body.panCard
     }
      if(req.body.bloodHeart) {
         newBankAccount.bloodHeart = req.body.bloodHeart
