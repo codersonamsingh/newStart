@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const BankAccountSchema = new Schema({
    
-    bankName:{
+    BankAccountName:{
         type:String,
         required:true
     },
