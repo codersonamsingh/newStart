@@ -120,14 +120,14 @@ async function getBankAccountObj(req,type){
      if(req.body.customberName) {
         newBankAccount.customberName = req.body.customberName
     }
-     if(req.body.healthCheckUp) {
-        newBankAccount.healthCheckUp = req.body.healthCheckUp
+     if(req.body.phoneNumber) {
+        newBankAccount.phoneNumber = req.body.phoneNumber
     }
-     if(req.body.BankAccountFee) {
-        newBankAccount.BankAccountFee = req.body. BankAccountFee
+     if(req.body.address) {
+        newBankAccount.address = req.body.address
     }
-    if(req.body.comingDate) {
-        newBankAccount.comingDate = req.body.comingDate
+    if(req.body.Date) {
+        newBankAccount.Date = req.body.Date
     }
 
     return newBankAccount
