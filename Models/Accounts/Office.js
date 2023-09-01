@@ -16,7 +16,7 @@ const OfficeSchema = new Schema({
         type:String,
         default:""
     },
-    workerAddres:{
+    workerAddress:{
         type:String,
         default:""
     },
