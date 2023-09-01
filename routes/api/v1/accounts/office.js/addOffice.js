@@ -111,11 +111,11 @@ async function getOfficeObj(req,type){
     if(req.body.officeName) {
         newOffice.officeName = req.body.officeName
     }
-    if(req.body.patientName) {
-        newOffice.patientName = req.body.patientName
+    if(req.body.workerName) {
+        newOffice.workerName = req.body.workerName
     }
-    if(req.body.patientAddress) {
-        newOffice.patientAddress = req.body.patientAddress
+    if(req.body.workerId) {
+        newOffice.workerId = req.body.workerId
     }
      if(req.body.bloodHeart) {
         newOffice.bloodHeart = req.body.bloodHeart
