@@ -33,4 +33,4 @@ const OfficeSchema = new Schema({
         default:Date.now
     },
 });
-module.exports =Hostel = mongoose.model("Hostel",HostelSchema)
+module.exports =Office = mongoose.model("Office",OfficeSchema)
