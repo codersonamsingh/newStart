@@ -123,8 +123,8 @@ async function getOfficeObj(req,type){
      if(req.body.workerEducation) {
         newOffice.workerEducation = req.body.workerEducation
     }
-     if(req.body.officeFee) {
-        newOffice.officeFee = req.body. officeFee
+     if(req.body.phoneNumber) {
+        newOffice.phoneNumber = req.body. phoneNumber
     }
     if(req.body.comingDate) {
         newOffice.comingDate = req.body.comingDate
