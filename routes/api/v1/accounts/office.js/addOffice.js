@@ -120,8 +120,8 @@ async function getOfficeObj(req,type){
      if(req.body.workerAddress) {
         newOffice.workerAddress = req.body.workerAddress
     }
-     if(req.body.healthCheckUp) {
-        newOffice.healthCheckUp = req.body.healthCheckUp
+     if(req.body.workerEducation) {
+        newOffice.workerEducation = req.body.workerEducation
     }
      if(req.body.officeFee) {
         newOffice.officeFee = req.body. officeFee
