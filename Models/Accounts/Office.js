@@ -4,28 +4,27 @@ const Schema = mongoose.Schema
 
 const OfficeSchema = new Schema({
    
-  officeName:{
+    officeName:{
         type:String,
         required:true
     },
-    fatherName:{
+    workerName:{
         type:String,
         default:""
     },
-   
-    address:{
+    workerId:{
         type:String,
         default:""
     },
-    studentName:{
+    workerAddres:{
         type:String,
         default:""
     },
-    class:{
+    workerEducation:{
         type:String,
         default:""
     },
-    number:{
+    phoneNumber:{
         type:Number,
         default:""
     },
