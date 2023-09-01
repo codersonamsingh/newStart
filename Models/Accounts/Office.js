@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-const HostelSchema = new Schema({
+const OfficeSchema = new Schema({
    
-   hostelName:{
+  officeName:{
         type:String,
         required:true
     },
