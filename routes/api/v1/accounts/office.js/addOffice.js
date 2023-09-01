@@ -1,26 +1,26 @@
 const express = require("express");
-constHospital = require("../../../../../Models/Accounts/Hospital");
+constOffice = require("../../../../../Models/Accounts/Office");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hospitalValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/officeValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/hospital/addHospital
-//@des crete Newhospital
+//@routes/api/v1/accounts/office/addOffice
+//@des crete Newoffice
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const hospitalObj = await getHospitalObj(req,"create")
-console.log(hospitalObj)
-     await new Hospital(hospitalObj)
+        const officeObj = await getOfficeObj(req,"create")
+console.log(officeObj)
+     await new Office(officeObj)
       .save();
       
       res.status(201).json({
-        message: "Hospital Added",
+        message: "Office Added",
         varient : "success"
       })
 
@@ -37,27 +37,27 @@ console.log(hospitalObj)
 
 )
 //@type POST
-//@routes/api/v1/accounts/hospital/addHospital/id:
-//@des crete Updatehospital
+//@routes/api/v1/accounts/office/addOffice/id:
+//@des crete Updateoffice
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        consthospitalObj = await getHospitalObj(req,"update")
+        constofficeObj = await getOfficeObj(req,"update")
 
-        consthospital = awaitHospital.findOneAndUpdate(
+        constoffice = awaitOffice.findOneAndUpdate(
             {id:req.params.id},
-            {$set:hospitalObj},
+            {$set:officeObj},
             {new:true}
         )
-        if(!hospital){
+        if(!office){
             res.status(500).json({
-                message: "hospital not found",
+                message: "office not found",
                 varient : "error"
               })
         }
         res.status(500).json({
-            message: "Hospital Updated Successfully",
+            message: "Office Updated Successfully",
             varient : "error"
           })
      
@@ -73,22 +73,22 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/hospital/addhospital/deleteOne/id:
-//@des Deletehospital
+//@route / api/v1/accounts/office/addoffice/deleteOne/id:
+//@des Deleteoffice
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        consthospital = awaitHospital.findIdAndRemove(req.params.id);
-        if(!hospital){
+        constoffice = awaitOffice.findIdAndRemove(req.params.id);
+        if(!office){
             res.status(500).json({
-                message: "hospital not found",
+                message: "office not found",
                 varient : "error"
               })
         }
         res.status(500).json({
-            message: "Hospital Deleted Successfully",
+            message: "Office Deleted Successfully",
             varient : "error"
           })
      
@@ -106,31 +106,31 @@ router.delete("/deleteOne/:id",async(req,res) => {
     })
     
     
-async function getHospitalObj(req,type){
-    let newHospital = {}
-    if(req.body.hospitalName) {
-        newHospital.hospitalName = req.body.hospitalName
+async function getOfficeObj(req,type){
+    let newOffice = {}
+    if(req.body.officeName) {
+        newOffice.officeName = req.body.officeName
     }
     if(req.body.patientName) {
-        newHospital.patientName = req.body.patientName
+        newOffice.patientName = req.body.patientName
     }
     if(req.body.patientAddress) {
-        newHospital.patientAddress = req.body.patientAddress
+        newOffice.patientAddress = req.body.patientAddress
     }
      if(req.body.bloodHeart) {
-        newHospital.bloodHeart = req.body.bloodHeart
+        newOffice.bloodHeart = req.body.bloodHeart
     }
      if(req.body.healthCheckUp) {
-        newHospital.healthCheckUp = req.body.healthCheckUp
+        newOffice.healthCheckUp = req.body.healthCheckUp
     }
-     if(req.body.hospitalFee) {
-        newHospital.hospitalFee = req.body. hospitalFee
+     if(req.body.officeFee) {
+        newOffice.officeFee = req.body. officeFee
     }
     if(req.body.comingDate) {
-        newHospital.comingDate = req.body.comingDate
+        newOffice.comingDate = req.body.comingDate
     }
 
-    return newHospital
+    return newOffice
 }
     
 module.exports = router;
