@@ -104,8 +104,6 @@ router.delete("/deleteOne/:id",async(req,res) => {
 
     }
     })
-    
-    
 async function getOfficeObj(req,type){
     let newOffice = {}
     if(req.body.officeName) {
