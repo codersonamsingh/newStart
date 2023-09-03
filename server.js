@@ -18,6 +18,8 @@ const getHostel = require("./routes/api/v1/accounts/hostel/getHostel");
 const addHostel = require("./routes/api/v1/accounts/hostel/addHostel");
 const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
 const getHospital = require("./routes/api/v1/accounts/hospital/getHospital");
+const addOffice = require("./routes/api/v1/accounts/office/addOffice");
+const getOffice = require("./routes/api/v1/accounts/office/getOfficel");
 
 
 const app = express();
