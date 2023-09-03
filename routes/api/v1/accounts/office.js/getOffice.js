@@ -14,7 +14,6 @@ try{
     
     const getOffice = await Office.find()
 
-
      res.json({
         data:getOffice,
         message:"office loaded",
