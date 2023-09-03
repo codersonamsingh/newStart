@@ -19,7 +19,7 @@ const addHostel = require("./routes/api/v1/accounts/hostel/addHostel");
 const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
 const getHospital = require("./routes/api/v1/accounts/hospital/getHospital");
 const addOffice = require("./routes/api/v1/accounts/office/addOffice");
-const getOffice = require("./routes/api/v1/accounts/office/getOfficel");
+const getOffice = require("./routes/api/v1/accounts/office/getOffice");
 
 
 const app = express();
@@ -58,7 +58,8 @@ app.use("/api/v1/accounts/hostel/addHostel",addHostel)
 app.use("/api/v1/accounts/hostel/getHostel",getHostel)
 app.use("/api/v1/accounts/hospital/addHospital",addHospital)
 app.use("/api/v1/accounts/hospital/getHospital",getHospital)
-
+app.use("/api/v1/accounts/office/addOffice",addOffice)
+app.use("/api/v1/accounts/office/getOffice",getOffice)
 
 
 //data base connection
