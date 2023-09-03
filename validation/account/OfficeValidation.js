@@ -1,9 +1,9 @@
 const validateOnCreate = async(req,res,next) => {
 
-    if(!req.body?.OfficeName){
+    if(!req.body?.officeName){
 
        return res.status(400).json({
-            message: "OfficeName Required",
+            message: "officeName Required",
             varient: "error"
         })
     }
