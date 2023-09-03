@@ -5,7 +5,7 @@ const Office = require("../../../../../Models/Accounts/Office");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/accounts/office/getOffice/getAll
+//@route /api/v1/accounts/Office/getOffice/getAll
 //@des get all  office
 //@access public
 router.get("/getAll", async(req,res) => {
@@ -71,9 +71,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         const getOffice = await Office.find({
             $or:[
                 
-                {fatherName: new RegExp(searchQuery, "i")},
-                
-                {studentName: new RegExp(searchQuery, "i")},
+                {officeName: new RegExp(searchQuery, "i")},
+                {workerName: new RegExp(searchQuery, "i")},
                 {number: new RegExp(searchQuery, "i")},
                 
             ]
