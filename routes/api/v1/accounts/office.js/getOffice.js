@@ -73,7 +73,7 @@ router.get("/search/:searchQuery", async(req,res) => {
                 
                 {officeName: new RegExp(searchQuery, "i")},
                 {workerName: new RegExp(searchQuery, "i")},
-                {number: new RegExp(searchQuery, "i")},
+                {phoneNumber: new RegExp(searchQuery, "i")},
                 
             ]
         })
