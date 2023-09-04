@@ -16,7 +16,7 @@ router.post("/",validateOnCreate, async(req,res) =>{
     try{
         constcollageObj = await getCollageObj(req,"create")
 
-     await new Collage(documentObj)
+     await new Collage(collageObj)
       .save();
       
       res.statusCode(201).json({
