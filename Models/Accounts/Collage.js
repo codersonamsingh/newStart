@@ -16,7 +16,7 @@ const CollageSchema = new Schema({
         type:String,
         default:""
     },
-    workerAddress:{
+    studentDocument:{
         type:String,
         default:""
     },
