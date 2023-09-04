@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-const OfficeSchema = new Schema({
+const CollageSchema = new Schema({
    
-    officeName:{
+    collageName:{
         type:String,
         required:true
     },
@@ -33,4 +33,4 @@ const OfficeSchema = new Schema({
         default:Date.now
     },
 });
-module.exports =Office = mongoose.model("Office",OfficeSchema)
+module.exports =Collage = mongoose.model("Collage",CollageSchema)
