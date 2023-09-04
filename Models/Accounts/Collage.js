@@ -8,7 +8,7 @@ const CollageSchema = new Schema({
         type:String,
         required:true
     },
-    workerName:{
+    studentName:{
         type:String,
         default:""
     },
