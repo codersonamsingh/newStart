@@ -20,7 +20,7 @@ const CollageSchema = new Schema({
         type:String,
         default:""
     },
-    workerEducation:{
+    noOfTeacher:{
         type:String,
         default:""
     },
