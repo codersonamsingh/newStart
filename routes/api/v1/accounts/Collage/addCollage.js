@@ -118,8 +118,8 @@ async function getCollageObj(req,type){
     if(req.body.workerAddress) {
         newCollage.workerAddress = req.body.workerAddress
     }
-    if(req.body.workerAddress) {
-        newCollage. workerAddress = req.body.  workerAddress
+    if(req.body.workerEducation) {
+        newCollage.workerEducation = req.body.workerEducation
     }
     if(req.body. workerAddress) {
         newCollage. workerAddress = req.body.  workerAddress
