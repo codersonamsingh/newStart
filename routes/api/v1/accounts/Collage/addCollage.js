@@ -109,8 +109,8 @@ router.delete("/deleteOne/:id",async(req,res) => {
 async function getCollageObj(req,type){
 
     let newCollage = {}
-    if(req.body.number) {
-        collage.number = req.body.number
+    if(req.body.officeName) {
+        newCollage.officeName = req.body.officeName
     }
     if(req.body.name) {
         collage.name = req.body.name
