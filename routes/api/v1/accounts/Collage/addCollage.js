@@ -118,6 +118,22 @@ async function getCollageObj(req,type){
     if(req.body.workerId) {
         newCollage.workerId = req.body. workerId
     }
+    if(req.body.workerId) {
+        newCollage.workerId = req.body. workerId
+    }
+    if(req.body.workerId) {
+        newCollage.workerId = req.body. workerId
+    }
+    if(req.body.workerId) {
+        newCollage.workerId = req.body. workerId
+    }
+    if(req.body.workerId) {
+        newCollage.workerId = req.body. workerId
+    }
+
+
+
+
 
     return newCollage
 }
