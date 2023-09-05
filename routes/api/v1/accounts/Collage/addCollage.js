@@ -37,7 +37,7 @@ router.post("/",validateOnCreate, async(req,res) =>{
 
 )
 //@type POST
-//@routes/api/v1/accounts/document/addCollage/id:
+//@routes/api/v1/accounts/collage/addCollage/id:
 //@des crete Updatecollage
 //@access public
 router.post("/:id",async (req,res) => {
@@ -50,9 +50,9 @@ router.post("/:id",async (req,res) => {
             {$set:collageObj},
             {new:true}
         )
-        if(!document){
+        if(!collage){
             res.statusCode(500).json({
-                message: "document not found",
+                message: "collage not found",
                 varient : "error"
               })
         }
@@ -73,7 +73,7 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/document/adddocument/deleteOne/id:
+//@route / api/v1/accounts/collage/addcollage/deleteOne/id:
 //@des Deletecollage
 //@access public
 
@@ -81,9 +81,9 @@ router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
         constcollage = await Collage.findIdAndRemove(req.params.id);
-        if(!document){
+        if(!collage){
             res.statusCode(500).json({
-                message: "document not found",
+                message: "collage not found",
                 varient : "error"
               })
         }
