@@ -2,16 +2,16 @@ const express = require("express");
 const Collage = require("../../../../../Models/Accounts/Collage");
 const router = express.Router();
 
-const {vali workerIdOnCreate, vali workerIdOnUp workerId} = require("../../../../../validation/account/collageValidation")
+const {vali  workerAddressOnCreate, vali  workerAddressOnUp  workerAddress} = require("../../../../../validation/account/collageValidation")
 
-//CRUD = crete Read Up workerId Delete
+//CRUD = crete Read Up  workerAddress Delete
 
 //@type POST
 //@routes/api/v1/accounts/collage/addCollage
 //@des crete Newcollage
 //@access public
 
-router.post("/",vali workerIdOnCreate, async(req,res) =>{
+router.post("/",vali  workerAddressOnCreate, async(req,res) =>{
 
     try{
         constcollageObj = await getCollageObj(req,"create")
@@ -38,14 +38,14 @@ router.post("/",vali workerIdOnCreate, async(req,res) =>{
 )
 //@type POST
 //@routes/api/v1/accounts/collage/addCollage/id:
-//@des crete Up workerIdcollage
+//@des crete Up  workerAddresscollage
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constcollageObj = await getCollageObj(req,"up workerId")
+        constcollageObj = await getCollageObj(req,"up  workerAddress")
 
-        constcollage = await Collage.findOneAndUp workerId(
+        constcollage = await Collage.findOneAndUp  workerAddress(
             {id:req.params.id},
             {$set:collageObj},
             {new:true}
@@ -57,7 +57,7 @@ router.post("/:id",async (req,res) => {
               })
         }
         res.statusCode(500).json({
-            message: "Collage Up workerIdd Successfully",
+            message: "Collage Up  workerAddressd Successfully",
             varient : "error"
           })
      
@@ -115,20 +115,20 @@ async function getCollageObj(req,type){
     if(req.body.workerName) {
         newCollage.workerName = req.body.workerName
     }
-    if(req.body.workerId) {
-        newCollage.workerId = req.body. workerId
+    if(req.body.workerAddress) {
+        newCollage.workerAddress = req.body.workerAddress
     }
-    if(req.body.workerId) {
-        newCollage.workerId = req.body. workerId
+    if(req.body.workerAddress) {
+        newCollage. workerAddress = req.body.  workerAddress
     }
-    if(req.body.workerId) {
-        newCollage.workerId = req.body. workerId
+    if(req.body. workerAddress) {
+        newCollage. workerAddress = req.body.  workerAddress
     }
-    if(req.body.workerId) {
-        newCollage.workerId = req.body. workerId
+    if(req.body. workerAddress) {
+        newCollage. workerAddress = req.body.  workerAddress
     }
-    if(req.body.workerId) {
-        newCollage.workerId = req.body. workerId
+    if(req.body. workerAddress) {
+        newCollage. workerAddress = req.body.  workerAddress
     }
 
 
