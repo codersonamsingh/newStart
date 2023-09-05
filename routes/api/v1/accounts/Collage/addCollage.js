@@ -124,12 +124,9 @@ async function getCollageObj(req,type){
     if(req.body.phoneNumber) {
         newCollage.phoneNumber= req.body.phoneNumber
     }
-    if(req.body. workerAddress) {
-        newCollage. workerAddress = req.body.  workerAddress
-    }
-    if(req.body. workerAddress) {
-        newCollage. workerAddress = req.body.  workerAddress
-    }
+    if(req.body. comingDate) {
+        newCollage.comingDate = req.body.comingDate
+    
 
 
 
