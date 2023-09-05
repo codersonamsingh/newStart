@@ -2,16 +2,16 @@ const express = require("express");
 const Collage = require("../../../../../Models/Accounts/Collage");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/collageValidation")
+const {vali workerIdOnCreate, vali workerIdOnUp workerId} = require("../../../../../validation/account/collageValidation")
 
-//CRUD = crete Read Update Delete
+//CRUD = crete Read Up workerId Delete
 
 //@type POST
 //@routes/api/v1/accounts/collage/addCollage
 //@des crete Newcollage
 //@access public
 
-router.post("/",validateOnCreate, async(req,res) =>{
+router.post("/",vali workerIdOnCreate, async(req,res) =>{
 
     try{
         constcollageObj = await getCollageObj(req,"create")
@@ -38,14 +38,14 @@ router.post("/",validateOnCreate, async(req,res) =>{
 )
 //@type POST
 //@routes/api/v1/accounts/collage/addCollage/id:
-//@des crete Updatecollage
+//@des crete Up workerIdcollage
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constcollageObj = await getCollageObj(req,"update")
+        constcollageObj = await getCollageObj(req,"up workerId")
 
-        constcollage = await Collage.findOneAndUpdate(
+        constcollage = await Collage.findOneAndUp workerId(
             {id:req.params.id},
             {$set:collageObj},
             {new:true}
@@ -57,7 +57,7 @@ router.post("/:id",async (req,res) => {
               })
         }
         res.statusCode(500).json({
-            message: "Collage Updated Successfully",
+            message: "Collage Up workerIdd Successfully",
             varient : "error"
           })
      
@@ -115,8 +115,8 @@ async function getCollageObj(req,type){
     if(req.body.workerName) {
         newCollage.workerName = req.body.workerName
     }
-    if(req.body.date) {
-        collage.date = req.body.date
+    if(req.body.workerId) {
+        newCollage.workerId = req.body. workerId
     }
 
     return newCollage
