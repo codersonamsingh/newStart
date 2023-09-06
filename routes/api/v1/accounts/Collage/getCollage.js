@@ -1,23 +1,23 @@
-//Read = 1. Get ALL BankAccount , 2. get one BankAccount by Id, 3. Search BankAccount with note or amount
+//Read = 1. Get ALL Collage , 2. get one Collage by Id, 3. Search Collage with note or amount
 
 const express = require("express");
-const BankAccount = require("../../../../../Models/Accounts/BankAccount");
+const Collage = require("../../../../../Models/Accounts/Collage");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/BankAccount/getBankAccount/getAll
-//@des get all  BankAccount
+//@route /api/v1/account/Collage/getCollage/getAll
+//@des get all  Collage
 //@access public
 router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getBankAccount = await BankAccount.find()
+    const getCollage = await Collage.find()
 
 
      res.json({
-        data:getBankAccount,
-        message:"BankAccount loaded",
+        data:getCollage,
+        message:"Collage loaded",
         varient:"success"
      })
 
@@ -32,19 +32,19 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/BankAccount/getBankAccount/getOne/:id
-//@des get one BankAccount
+//@route /api/v1/account/Collage/getCollage/getOne/:id
+//@des get one Collage
 //@access public
 router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getBankAccount = await BankAccount.findById(req.params.id)
+        const getCollage = await Collage.findById(req.params.id)
     
     
          res.json({
-            data:getBankAccount,
-            message:"BankAccount loaded",
+            data:getCollage,
+            message:"Collage loaded",
             varient:"success"
          })
     
@@ -59,8 +59,8 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/BankAccount/getBankAccount/search/:seachQuery
-//@des to search BankAccount
+//@route /api/v1/account/Collage/getCollage/search/:seachQuery
+//@des to search Collage
 //@access public
 router.get("/search/:searchQuery", async(req,res) => {
 
@@ -68,7 +68,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         
         const searchQuery = req.params.searchQuery
 
-        const getBankAccount = await BankAccount.find({
+        const getCollage = await Collage.find({
             $or:[
                 {collageName: new RegExp(searchQuery, "i")},
                 { studentName: new RegExp(searchQuery, "i")},
@@ -77,8 +77,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         })
     
          res.json({
-            data:getBankAccount,
-            message:"BankAccount loaded",
+            data:getCollage,
+            message:"Collage loaded",
             varient:"success"
          })
     
