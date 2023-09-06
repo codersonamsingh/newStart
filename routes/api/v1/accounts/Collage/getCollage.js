@@ -71,7 +71,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         const getBankAccount = await BankAccount.find({
             $or:[
                 {collageName: new RegExp(searchQuery, "i")},
-                {customberName: new RegExp(searchQuery, "i")},
+                { studentName: new RegExp(searchQuery, "i")},
                 
             ]
         })
