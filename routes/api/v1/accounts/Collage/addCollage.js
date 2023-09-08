@@ -108,14 +108,14 @@ async function getCollageObj(req,type){
     if(req.body.collageName) {
         newCollage.collageName = req.body.collageName
     }
-    if(req.body.workerName) {
-        newCollage.workerName = req.body.workerName
+    if(req.body.studentName) {
+        newCollage.studentName = req.body.studentName
     }
-    if(req.body.workerId) {
-        newCollage.workerId = req.body.workerId
+    if(req.body.noOfStudent) {
+        newCollage.noOfStudent = req.body.noOfStudent
     }
-     if(req.body.workerAddress) {
-        newCollage.workerAddress = req.body.workerAddress
+     if(req.body. studentDocument) {
+        newCollage. studentDocument = req.body.workerAddress
     }
      if(req.body.workerEducation) {
         newCollage.workerEducation = req.body.workerEducation
