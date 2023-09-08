@@ -62,7 +62,8 @@ app.use("/api/v1/accounts/hospital/addHospital",addHospital)
 app.use("/api/v1/accounts/hospital/getHospital",getHospital)
 app.use("/api/v1/accounts/office/addOffice",addOffice)
 app.use("/api/v1/accounts/office/getOffice",getOffice)
-app.use("/api/v1/accounts/office/addCollage",addCollage)
+app.use("/api/v1/accounts/collage/addCollage",addCollage)
+
 
 //data base connection
 const db = require("./setup/myurl").mongoURL;
