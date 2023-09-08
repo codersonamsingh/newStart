@@ -20,7 +20,7 @@ const addHospital = require("./routes/api/v1/accounts/hospital/addHospital");
 const getHospital = require("./routes/api/v1/accounts/hospital/getHospital");
 const addOffice = require("./routes/api/v1/accounts/office/addOffice");
 const getOffice = require("./routes/api/v1/accounts/office/getOffice");
-
+const addCollage = require("./routes/api/v1/accounts/Collage/addCollage");
 
 const app = express();
 app.use(upload({useTempfiles:true}))
