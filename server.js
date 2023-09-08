@@ -21,6 +21,8 @@ const getHospital = require("./routes/api/v1/accounts/hospital/getHospital");
 const addOffice = require("./routes/api/v1/accounts/office/addOffice");
 const getOffice = require("./routes/api/v1/accounts/office/getOffice");
 const addCollage = require("./routes/api/v1/accounts/Collage/addCollage");
+const getCollage = require("./routes/api/v1/accounts/Collage/getCollage");
+
 
 const app = express();
 app.use(upload({useTempfiles:true}))
