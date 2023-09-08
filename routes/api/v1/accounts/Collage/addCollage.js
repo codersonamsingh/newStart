@@ -1,33 +1,32 @@
 const express = require("express");
-const Collage = require("../../../../../Models/Accounts/Collage");
+constOffice = require("../../../../../Models/Accounts/Office");
 const router = express.Router();
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/officeValidation")
 
-const {vali  workerAddressOnCreate, vali  workerAddressOnUp  workerAddress} = require("../../../../../validation/account/collageValidation")
-
-//CRUD = crete Read Up  workerAddress Delete
+//CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/collage/addCollage
-//@des crete Newcollage
+//@routes/api/v1/accounts/office/addOffice
+//@des crete Newoffice
 //@access public
 
-router.post("/",vali  workerAddressOnCreate, async(req,res) =>{
+router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        constcollageObj = await getCollageObj(req,"create")
-
-     await new Collage(collageObj)
+        const officeObj = await getOfficeObj(req,"create")
+console.log(officeObj)
+     await new Office(officeObj)
       .save();
       
-      res.statusCode(201).json({
-        message: "Collage Added",
+      res.status(201).json({
+        message: "Office Added",
         varient : "success"
       })
 
     } catch(error){
         console.log(error)
-        res.statusCode(500).json({
-        message: "Internal server error",
+        res.status(500).json({
+        message: "Internal Server error",
         varient : "error"
       })
     }
@@ -37,34 +36,34 @@ router.post("/",vali  workerAddressOnCreate, async(req,res) =>{
 
 )
 //@type POST
-//@routes/api/v1/accounts/collage/addCollage/id:
-//@des crete Up  workerAddresscollage
+//@routes/api/v1/accounts/office/addOffice/id:
+//@des crete Updateoffice
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constcollageObj = await getCollageObj(req,"up  workerAddress")
+        constofficeObj = await getOfficeObj(req,"update")
 
-        constcollage = await Collage.findOneAndUp  workerAddress(
+        constoffice = awaitOffice.findOneAndUpdate(
             {id:req.params.id},
-            {$set:collageObj},
+            {$set:officeObj},
             {new:true}
         )
-        if(!collage){
-            res.statusCode(500).json({
-                message: "collage not found",
+        if(!office){
+            res.status(500).json({
+                message: "office not found",
                 varient : "error"
               })
         }
-        res.statusCode(500).json({
-            message: "Collage Up  workerAddressd Successfully",
+        res.status(500).json({
+            message: "Office Updated Successfully",
             varient : "error"
           })
      
 
     } catch(error){
         console.log(error)
-        res.statusCode(500).json({
+        res.status(500).json({
         message: "Internal server error",
         varient : "error"
       })
@@ -73,22 +72,22 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/collage/addcollage/deleteOne/id:
-//@des Deletecollage
+//@route / api/v1/accounts/office/addoffice/deleteOne/id:
+//@des Deleteoffice
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        constcollage = await Collage.findIdAndRemove(req.params.id);
-        if(!collage){
-            res.statusCode(500).json({
-                message: "collage not found",
+        constoffice = awaitOffice.findIdAndRemove(req.params.id);
+        if(!office){
+            res.status(500).json({
+                message: "office not found",
                 varient : "error"
               })
         }
-        res.statusCode(500).json({
-            message: "Collage Deleted Successfully",
+        res.status(500).json({
+            message: "Office Deleted Successfully",
             varient : "error"
           })
      
@@ -96,7 +95,7 @@ router.delete("/deleteOne/:id",async(req,res) => {
     }
     catch(error){
         console.log(error)
-        res.statusCode(500).json({
+        res.status(500).json({
             message: "Internal Server error",
             varient : "error"
           })
@@ -104,35 +103,31 @@ router.delete("/deleteOne/:id",async(req,res) => {
 
     }
     })
-    
-    
-async function getCollageObj(req,type){
-
-    let newCollage = {}
+async function getOfficeObj(req,type){
+    let newOffice = {}
     if(req.body.officeName) {
-        newCollage.officeName = req.body.officeName
+        newOffice.officeName = req.body.officeName
     }
     if(req.body.workerName) {
-        newCollage.workerName = req.body.workerName
+        newOffice.workerName = req.body.workerName
     }
-    if(req.body.workerAddress) {
-        newCollage.workerAddress = req.body.workerAddress
+    if(req.body.workerId) {
+        newOffice.workerId = req.body.workerId
     }
-    if(req.body.workerEducation) {
-        newCollage.workerEducation = req.body.workerEducation
+     if(req.body.workerAddress) {
+        newOffice.workerAddress = req.body.workerAddress
     }
-    if(req.body.phoneNumber) {
-        newCollage.phoneNumber= req.body.phoneNumber
+     if(req.body.workerEducation) {
+        newOffice.workerEducation = req.body.workerEducation
     }
-    if(req.body. comingDate) {
-        newCollage.comingDate = req.body.comingDate
-    
+     if(req.body.phoneNumber) {
+        newOffice.phoneNumber = req.body. phoneNumber
+    }
+    if(req.body.comingDate) {
+        newOffice.comingDate = req.body.comingDate
+    }
 
-
-
-
-
-    return newCollage
+    return newOffice
 }
     
 module.exports = router;
