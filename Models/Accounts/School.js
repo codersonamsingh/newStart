@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const CollageSchema = new Schema({
    
-    collageName:{
+    schoolName:{
         type:String,
         required:true
     },
