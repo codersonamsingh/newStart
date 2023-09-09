@@ -1,7 +1,7 @@
 const express = require("express");
 constCollage = require("../../../../../Models/Accounts/Collage");
 const router = express.Router();
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/collageValidation")
 
 //CRUD = crete Read Update Delete
 
