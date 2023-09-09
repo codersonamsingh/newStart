@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-const CollageSchema = new Schema({
+const SchoolSchema = new Schema({
    
     schoolName:{
         type:String,
@@ -33,4 +33,4 @@ const CollageSchema = new Schema({
         default:Date.now
     },
 });
-module.exports =Collage = mongoose.model("Collage",CollageSchema)
+module.exports =School = mongoose.model("School",SchoolSchema)
