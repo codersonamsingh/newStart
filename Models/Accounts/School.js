@@ -24,6 +24,10 @@ const SchoolSchema = new Schema({
         type:String,
         default:""
     },
+    noOfStaff:{
+        type:String,
+        default:""
+    },
     phoneNumber:{
         type:Number,
         default:""
