@@ -1,9 +1,9 @@
 const validateOnCreate = async(req,res,next) => {
 
-    if(!req.body?.collageName){
+    if(!req.body?.schoolName){
 
        return res.status(400).json({
-            message: "collageName Required",
+            message: "schoolName Required",
             varient: "error"
         })
     }
