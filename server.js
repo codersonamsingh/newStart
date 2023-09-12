@@ -66,7 +66,7 @@ app.use("/api/v1/accounts/office/getOffice",getOffice)
 app.use("/api/v1/accounts/collage/addCollage",addCollage)
 app.use("/api/v1/accounts/collage/getCollage",getCollage)
 app.use("/api/api/v1/accounts/school/addSchool",addCollage)
-
+app.use("/api/api/v1/accounts/school/addSchool",addCollage)
 
 
 //data base connection
