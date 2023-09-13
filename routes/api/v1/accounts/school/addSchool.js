@@ -36,7 +36,7 @@ console.log(collageObj)
 
 )
 //@type POST
-//@routes/api/v1/accounts/collage/addSchool/id:
+//@routes/api/v1/accounts/school/addSchool/id:
 //@des crete Updatecollage
 //@access public
 router.post("/:id",async (req,res) => {
