@@ -72,7 +72,7 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/collage/addcollage/deleteOne/id:
+//@route / api/v1/accounts//addschool/deleteOne/id:
 //@des Deletecollage
 //@access public
 
@@ -82,7 +82,7 @@ router.delete("/deleteOne/:id",async(req,res) => {
         constcollage = awaitSchool.findIdAndRemove(req.params.id);
         if(!collage){
             res.status(500).json({
-                message: "collage not found",
+                message: "scool not found",
                 varient : "error"
               })
         }
