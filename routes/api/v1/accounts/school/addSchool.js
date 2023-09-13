@@ -51,7 +51,7 @@ router.post("/:id",async (req,res) => {
         )
         if(!collage){
             res.status(500).json({
-                message: "collage not found",
+                message: "school not found",
                 varient : "error"
               })
         }
