@@ -7,15 +7,15 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 
 //@type POST
 //@routes/api/v1/accounts/school/addSchool
-//@des crete Newcollage
+//@des crete Newschool
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const collageObj = await getSchoolObj(req,"create")
-console.log(collageObj)
-     await new School(collageObj)
+        const schoolObj = await getSchoolObj(req,"create")
+console.log(schoolObj)
+     await new School(schoolObj)
       .save();
       
       res.status(201).json({
@@ -37,19 +37,19 @@ console.log(collageObj)
 )
 //@type POST
 //@routes/api/v1/accounts/school/addSchool/id:
-//@des crete Updatecollage
+//@des crete Updateschool
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constcollageObj = await getSchoolObj(req,"update")
+        constschoolObj = await getSchoolObj(req,"update")
 
-        constcollage = awaitSchool.findOneAndUpdate(
+        constschool = awaitSchool.findOneAndUpdate(
             {id:req.params.id},
-            {$set:collageObj},
+            {$set:schoolObj},
             {new:true}
         )
-        if(!collage){
+        if(!school){
             res.status(500).json({
                 message: "school not found",
                 varient : "error"
@@ -79,8 +79,8 @@ router.post("/:id",async (req,res) => {
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        constcollage = awaitSchool.findIdAndRemove(req.params.id);
-        if(!collage){
+        constschool = awaitSchool.findIdAndRemove(req.params.id);
+        if(!school){
             res.status(500).json({
                 message: "school not found",
                 varient : "error"
@@ -105,8 +105,8 @@ router.delete("/deleteOne/:id",async(req,res) => {
     })
 async function getSchoolObj(req,type){
     let newSchool = {}
-    if(req.body.collageName) {
-        newSchool.collageName = req.body.collageName
+    if(req.body.schoolName) {
+        newSchool.schoolName = req.body.schoolName
     }
     if(req.body.studentName) {
         newSchool.studentName = req.body.studentName
