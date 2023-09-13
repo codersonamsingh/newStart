@@ -46,7 +46,7 @@ router.post("/:id",async (req,res) => {
 
         constschool = awaitSchool.findOneAndUpdate(
             {id:req.params.id},
-            {$set:schoolObj},
+            {$set:SchoolObj},
             {new:true}
         )
         if(!school){
