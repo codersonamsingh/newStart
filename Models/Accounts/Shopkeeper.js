@@ -12,7 +12,7 @@ const ShopkeeperSchema = new Schema({
         type:String,
         default:""
     },
-    noOfStudent:{
+    noOfItems:{
         type:String,
         default:""
     },
