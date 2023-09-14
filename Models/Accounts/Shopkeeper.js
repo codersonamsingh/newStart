@@ -28,7 +28,7 @@ const ShopkeeperSchema = new Schema({
         type:Number,
         default:""
     },
-    :{
+    address:{
         type:Number,
         default:""
     },
