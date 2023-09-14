@@ -20,7 +20,7 @@ const ShopkeeperSchema = new Schema({
         type:String,
         default:""
     },
-    noOfTeacher:{
+    gstNo:{
         type:String,
         default:""
     },
@@ -28,7 +28,7 @@ const ShopkeeperSchema = new Schema({
         type:Number,
         default:""
     },
-    comingDate:{
+    Date:{
         type:Date,
         default:Date.now
     },
