@@ -2,13 +2,13 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-const CollageSchema = new Schema({
+const ShopkeeperSchema = new Schema({
    
-    collageName:{
+    shopkeeperName:{
         type:String,
         required:true
     },
-    studentName:{
+    Name:{
         type:String,
         default:""
     },
@@ -33,4 +33,4 @@ const CollageSchema = new Schema({
         default:Date.now
     },
 });
-module.exports =Collage = mongoose.model("Collage",CollageSchema)
+module.exports =Shopkeeper = mongoose.model("Shopkeeper",ShopkeeperSchema)
