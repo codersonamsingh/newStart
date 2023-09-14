@@ -28,7 +28,7 @@ const ShopkeeperSchema = new Schema({
         type:Number,
         default:""
     },
-    Date:{
+    openingDate:{
         type:Date,
         default:Date.now
     },
