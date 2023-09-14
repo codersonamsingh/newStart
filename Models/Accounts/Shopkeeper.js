@@ -16,7 +16,7 @@ const ShopkeeperSchema = new Schema({
         type:String,
         default:""
     },
-    studentDocument:{
+    itemRate:{
         type:String,
         default:""
     },
