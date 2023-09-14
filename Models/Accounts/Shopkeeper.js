@@ -28,6 +28,10 @@ const ShopkeeperSchema = new Schema({
         type:Number,
         default:""
     },
+    :{
+        type:Number,
+        default:""
+    },
     openingDate:{
         type:Date,
         default:Date.now
