@@ -8,7 +8,7 @@ const ShopkeeperSchema = new Schema({
         type:String,
         required:true
     },
-    Name:{
+    materialName:{
         type:String,
         default:""
     },
