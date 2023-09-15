@@ -6,16 +6,16 @@ const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/school/addShopkeeper
-//@des crete Newschool
+//@routes/api/v1/accounts/shopkeeper/addShopkeeper
+//@des crete Newshopkeeper
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const schoolObj = await getShopkeeperObj(req,"create")
-console.log(schoolObj)
-     await new Shopkeeper(schoolObj)
+        const shopkeeperObj = await getShopkeeperObj(req,"create")
+console.log(shopkeeperObj)
+     await new Shopkeeper(shopkeeperObj)
       .save();
       
       res.status(201).json({
@@ -36,22 +36,22 @@ console.log(schoolObj)
 
 )
 //@type POST
-//@routes/api/v1/accounts/school/addShopkeeper/id:
-//@des crete Updateschool
+//@routes/api/v1/accounts/shopkeeper/addShopkeeper/id:
+//@des crete Updateshopkeeper
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constschoolObj = await getShopkeeperObj(req,"update")
+        constshopkeeperObj = await getShopkeeperObj(req,"update")
 
-        constschool = awaitShopkeeper.findOneAndUpdate(
+        constshopkeeper = awaitShopkeeper.findOneAndUpdate(
             {id:req.params.id},
             {$set:ShopkeeperObj},
             {new:true}
         )
-        if(!school){
+        if(!shopkeeper){
             res.status(500).json({
-                message: "school not found",
+                message: "shopkeeper not found",
                 varient : "error"
               })
         }
@@ -72,17 +72,17 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts//addschool/deleteOne/id:
-//@des Deleteschool
+//@route / api/v1/accounts//addshopkeeper/deleteOne/id:
+//@des Deleteshopkeeper
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        constschool = awaitShopkeeper.findIdAndRemove(req.params.id);
-        if(!school){
+        constshopkeeper = awaitShopkeeper.findIdAndRemove(req.params.id);
+        if(!shopkeeper){
             res.status(500).json({
-                message: "school not found",
+                message: "shopkeeper not found",
                 varient : "error"
               })
         }
@@ -105,8 +105,8 @@ router.delete("/deleteOne/:id",async(req,res) => {
     })
 async function getShopkeeperObj(req,type){
     let newShopkeeper = {}
-    if(req.body.schoolName) {
-        newShopkeeper.schoolName = req.body.schoolName
+    if(req.body.shopkeeperName) {
+        newShopkeeper.shopkeeperName = req.body.shopkeeperName
     }
     if(req.body.studentName) {
         newShopkeeper.studentName = req.body.studentName
