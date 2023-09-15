@@ -1,25 +1,25 @@
 const express = require("express");
-constSchool = require("../../../../../Models/Accounts/School");
+constShopkeeper = require("../../../../../Models/Accounts/Shopkeeper");
 const router = express.Router();
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/SchoolValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/ShopkeeperValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/school/addSchool
+//@routes/api/v1/accounts/school/addShopkeeper
 //@des crete Newschool
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const schoolObj = await getSchoolObj(req,"create")
+        const schoolObj = await getShopkeeperObj(req,"create")
 console.log(schoolObj)
-     await new School(schoolObj)
+     await new Shopkeeper(schoolObj)
       .save();
       
       res.status(201).json({
-        message: "School Added",
+        message: "Shopkeeper Added",
         varient : "success"
       })
 
@@ -36,17 +36,17 @@ console.log(schoolObj)
 
 )
 //@type POST
-//@routes/api/v1/accounts/school/addSchool/id:
+//@routes/api/v1/accounts/school/addShopkeeper/id:
 //@des crete Updateschool
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constschoolObj = await getSchoolObj(req,"update")
+        constschoolObj = await getShopkeeperObj(req,"update")
 
-        constschool = awaitSchool.findOneAndUpdate(
+        constschool = awaitShopkeeper.findOneAndUpdate(
             {id:req.params.id},
-            {$set:SchoolObj},
+            {$set:ShopkeeperObj},
             {new:true}
         )
         if(!school){
@@ -56,7 +56,7 @@ router.post("/:id",async (req,res) => {
               })
         }
         res.status(500).json({
-            message: "School Updated Successfully",
+            message: "Shopkeeper Updated Successfully",
             varient : "error"
           })
      
@@ -79,7 +79,7 @@ router.post("/:id",async (req,res) => {
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        constschool = awaitSchool.findIdAndRemove(req.params.id);
+        constschool = awaitShopkeeper.findIdAndRemove(req.params.id);
         if(!school){
             res.status(500).json({
                 message: "school not found",
@@ -87,7 +87,7 @@ router.delete("/deleteOne/:id",async(req,res) => {
               })
         }
         res.status(500).json({
-            message: "School Deleted Successfully",
+            message: "Shopkeeper Deleted Successfully",
             varient : "error"
           })
      
@@ -103,31 +103,31 @@ router.delete("/deleteOne/:id",async(req,res) => {
 
     }
     })
-async function getSchoolObj(req,type){
-    let newSchool = {}
+async function getShopkeeperObj(req,type){
+    let newShopkeeper = {}
     if(req.body.schoolName) {
-        newSchool.schoolName = req.body.schoolName
+        newShopkeeper.schoolName = req.body.schoolName
     }
     if(req.body.studentName) {
-        newSchool.studentName = req.body.studentName
+        newShopkeeper.studentName = req.body.studentName
     }
     if(req.body.noOfStudent) {
-        newSchool.noOfStudent = req.body.noOfStudent
+        newShopkeeper.noOfStudent = req.body.noOfStudent
     }
      if(req.body.studentDocument) {
-        newSchool.studentDocument = req.body.studentDocument
+        newShopkeeper.studentDocument = req.body.studentDocument
     }
      if(req.body.noOfTeacher) {
-        newSchool.noOfTeacher = req.body.noOfTeacher
+        newShopkeeper.noOfTeacher = req.body.noOfTeacher
     }
      if(req.body.phoneNumber) {
-        newSchool.phoneNumber = req.body. phoneNumber
+        newShopkeeper.phoneNumber = req.body. phoneNumber
     }
     if(req.body.comingDate) {
-        newSchool.comingDate = req.body.comingDate
+        newShopkeeper.comingDate = req.body.comingDate
     }
 
-    return newSchool
+    return newShopkeeper
 }
     
 module.exports = router;
