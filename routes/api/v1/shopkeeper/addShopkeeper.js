@@ -117,8 +117,8 @@ async function getShopkeeperObj(req,type){
      if(req.body.itemRate) {
         newShopkeeper.itemRate = req.body.itemRate
     }
-     if(req.body.noOfTeacher) {
-        newShopkeeper.noOfTeacher = req.body.noOfTeacher
+     if(req.body.gstNo) {
+        newShopkeeper.gstNo = req.body.gstNo
     }
      if(req.body.phoneNumber) {
         newShopkeeper.phoneNumber = req.body. phoneNumber
