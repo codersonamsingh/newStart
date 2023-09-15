@@ -121,7 +121,7 @@ async function getShopkeeperObj(req,type){
         newShopkeeper.gstNo = req.body.gstNo
     }
     if(req.body.address) {
-        newShopkeeper.address = req.body.gstNo
+        newShopkeeper.address = req.body.address
     }
      if(req.body.phoneNumber) {
         newShopkeeper.phoneNumber = req.body. phoneNumber
