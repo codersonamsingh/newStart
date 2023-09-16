@@ -1,7 +1,7 @@
 //Read = 1. Get ALL Shopkeeper , 2. get one Shopkeeper by Id, 3. Search Shopkeeper with note or amount
 
 const express = require("express");
-const Shopkeeper = require("../../../../../Models/Accounts/");
+const Shopkeeper = require("../../../../../Models/Accounts/Shopkeeper");
 const router = express.Router();
 
 //@type Get
