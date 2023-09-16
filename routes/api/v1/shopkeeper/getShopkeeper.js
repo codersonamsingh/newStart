@@ -1,23 +1,23 @@
-//Read = 1. Get ALL School , 2. get one School by Id, 3. Search School with note or amount
+//Read = 1. Get ALL Shopkeeper , 2. get one Shopkeeper by Id, 3. Search Shopkeeper with note or amount
 
 const express = require("express");
-const School = require("../../../../../Models/Accounts/School");
+const Shopkeeper = require("../../../../../Models/Accounts/Shopkeeper");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/School/getSchool/getAll
-//@des get all  School
+//@route /api/v1/account/Shopkeeper/getShopkeeper/getAll
+//@des get all  Shopkeeper
 //@access public
 router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getSchool = await School.find()
+    const getShopkeeper = await Shopkeeper.find()
 
 
      res.json({
-        data:getSchool,
-        message:"School loaded",
+        data:getShopkeeper,
+        message:"Shopkeeper loaded",
         varient:"success"
      })
 
@@ -32,19 +32,19 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/School/getSchool/getOne/:id
-//@des get one School
+//@route /api/v1/account/Shopkeeper/getShopkeeper/getOne/:id
+//@des get one Shopkeeper
 //@access public
 router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getSchool = await School.findById(req.params.id)
+        const getShopkeeper = await Shopkeeper.findById(req.params.id)
     
     
          res.json({
-            data:getSchool,
-            message:"School loaded",
+            data:getShopkeeper,
+            message:"Shopkeeper loaded",
             varient:"success"
          })
     
@@ -59,8 +59,8 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/School/getSchool/search/:seachQuery
-//@des to search School
+//@route /api/v1/account/Shopkeeper/getShopkeeper/search/:seachQuery
+//@des to search Shopkeeper
 //@access public
 router.get("/search/:searchQuery", async(req,res) => {
 
@@ -68,7 +68,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         
         const searchQuery = req.params.searchQuery
 
-        const getSchool = await School.find({
+        const getShopkeeper = await Shopkeeper.find({
             $or:[
                 {schoolName: new RegExp(searchQuery, "i")},
                 {studentName: new RegExp(searchQuery, "i")},
@@ -77,8 +77,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         })
     
          res.json({
-            data:getSchool,
-            message:"School loaded",
+            data:getShopkeeper,
+            message:"Shopkeeper loaded",
             varient:"success"
          })
     
