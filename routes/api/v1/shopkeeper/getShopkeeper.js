@@ -71,7 +71,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         const getShopkeeper = await Shopkeeper.find({
             $or:[
                 {shopkeeperName: new RegExp(searchQuery, "i")},
-                {studentName: new RegExp(searchQuery, "i")},
+                {materialName: new RegExp(searchQuery, "i")},
                 
             ]
         })
