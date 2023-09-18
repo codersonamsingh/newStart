@@ -72,6 +72,7 @@ app.use("/api/api/v1/accounts/School/getSchool",getSchool)
 
 
 
+
 //data base connection
 const db = require("./setup/myurl").mongoURL;
 
