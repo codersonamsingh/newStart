@@ -26,6 +26,7 @@ const addSchool = require("./routes/api/v1/accounts/School/addSchool");
 const getSchool = require("./routes/api/v1/accounts/School/getSchool");
 const addShopkeeper = require("./routes/api/v1/accounts/Shopkeeper/addShopkeeper");
 
+
 const app = express();
 app.use(upload({useTempfiles:true}))
 
