@@ -69,7 +69,7 @@ app.use("/api/v1/accounts/collage/addCollage",addCollage)
 app.use("/api/v1/accounts/collage/getCollage",getCollage)
 app.use("/api/api/v1/accounts/School/addSchool",addSchool)
 app.use("/api/api/v1/accounts/School/getSchool",getSchool)
-
+app.use("/api/api/v1/accounts/School/getSchool",getSchool)
 
 
 
