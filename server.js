@@ -25,7 +25,7 @@ const getCollage = require("./routes/api/v1/accounts/Collage/getCollage");
 const addSchool = require("./routes/api/v1/accounts/School/addSchool");
 const getSchool = require("./routes/api/v1/accounts/School/getSchool");
 const addShopkeeper = require("./routes/api/v1/accounts/Shopkeeper/addShopkeeper");
-const addShopkeeper = require("./routes/api/v1/accounts/Shopkeeper/getShopkeeper");
+const Shopkeeper = require("./routes/api/v1/accounts/Shopkeeper/getShopkeeper");
 
 const app = express();
 app.use(upload({useTempfiles:true}))
