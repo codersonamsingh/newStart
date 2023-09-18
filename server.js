@@ -24,6 +24,7 @@ const addCollage = require("./routes/api/v1/accounts/Collage/addCollage");
 const getCollage = require("./routes/api/v1/accounts/Collage/getCollage");
 const addSchool = require("./routes/api/v1/accounts/School/addSchool");
 const getSchool = require("./routes/api/v1/accounts/School/getSchool");
+const get = require("./routes/api/v1/accounts/School/getSchool");
 
 const app = express();
 app.use(upload({useTempfiles:true}))
