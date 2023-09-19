@@ -2,21 +2,21 @@ const express = require("express");
 constOffice = require("../../../../../Models/Accounts/Office");
 const router = express.Router();
 
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/officeValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/hospitalValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/office/addOffice
-//@des crete Newoffice
+//@routes/api/v1/accounts/hospital/addOffice
+//@des crete Newhospital
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const officeObj = await getOfficeObj(req,"create")
-console.log(officeObj)
-     await new Office(officeObj)
+        const hospitalObj = await getOfficeObj(req,"create")
+console.log(hospitalObj)
+     await new Office(hospitalObj)
       .save();
       
       res.status(201).json({
@@ -37,22 +37,22 @@ console.log(officeObj)
 
 )
 //@type POST
-//@routes/api/v1/accounts/office/addOffice/id:
-//@des crete Updateoffice
+//@routes/api/v1/accounts/hospital/addOffice/id:
+//@des crete Updatehospital
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constofficeObj = await getOfficeObj(req,"update")
+        consthospitalObj = await getOfficeObj(req,"update")
 
-        constoffice = awaitOffice.findOneAndUpdate(
+        consthospital = awaitOffice.findOneAndUpdate(
             {id:req.params.id},
-            {$set:officeObj},
+            {$set:hospitalObj},
             {new:true}
         )
-        if(!office){
+        if(!hospital){
             res.status(500).json({
-                message: "office not found",
+                message: "hospital not found",
                 varient : "error"
               })
         }
@@ -73,17 +73,17 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts/office/addoffice/deleteOne/id:
-//@des Deleteoffice
+//@route / api/v1/accounts/hospital/addhospital/deleteOne/id:
+//@des Deletehospital
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        constoffice = awaitOffice.findIdAndRemove(req.params.id);
-        if(!office){
+        consthospital = awaitOffice.findIdAndRemove(req.params.id);
+        if(!hospital){
             res.status(500).json({
-                message: "office not found",
+                message: "hospital not found",
                 varient : "error"
               })
         }
@@ -108,8 +108,8 @@ router.delete("/deleteOne/:id",async(req,res) => {
     
 async function getOfficeObj(req,type){
     let newOffice = {}
-    if(req.body.officeName) {
-        newOffice.officeName = req.body.officeName
+    if(req.body.hospitalName) {
+        newOffice.hospitalName = req.body.hospitalName
     }
     if(req.body.patientName) {
         newOffice.patientName = req.body.patientName
@@ -123,8 +123,8 @@ async function getOfficeObj(req,type){
      if(req.body.healthCheckUp) {
         newOffice.healthCheckUp = req.body.healthCheckUp
     }
-     if(req.body.officeFee) {
-        newOffice.officeFee = req.body. officeFee
+     if(req.body.hospitalFee) {
+        newOffice.hospitalFee = req.body. hospitalFee
     }
     if(req.body.comingDate) {
         newOffice.comingDate = req.body.comingDate
