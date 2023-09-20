@@ -3,7 +3,7 @@ const validateOnCreate = async(req,res,next) => {
     if(!req.body?.shopkeeperName){
 
        return res.status(400).json({
-            message: "schoolName Required",
+            message: "shopkeeperName Required",
             varient: "error"
         })
     }
