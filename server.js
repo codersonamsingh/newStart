@@ -70,7 +70,7 @@ app.use("/api/v1/accounts/collage/getCollage",getCollage)
 app.use("/api/api/v1/accounts/school/addSchool",addSchool)
 app.use("/api/api/v1/accounts/school/getSchool",getSchool)
 app.use("/api/api/v1/accounts/Shopkeeper/addShopkeeper",addShopkeeper)
-app.use("/api/api/v1/accounts/Shopkeeper/getShopkeeper",addShopkeeper)
+app.use("/api/api/v1/accounts/Shopkeeper/getShopkeeper",getShopkeeper)
 
 
 //data base connection
