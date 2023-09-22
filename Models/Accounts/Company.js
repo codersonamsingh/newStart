@@ -11,7 +11,7 @@ const CompanySchema = new Schema({
         type:String,
         default:""
     },
-    income Tax:{
+    incomeTax:{
         type:String,
         default:""
     },
