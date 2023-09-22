@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const ShopkeeperSchema = new Schema({
    
-    shopkeeperName:{
+    companyrName:{
         type:String,
         required:true
     },
