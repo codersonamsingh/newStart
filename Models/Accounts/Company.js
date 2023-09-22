@@ -19,7 +19,7 @@ const CompanySchema = new Schema({
         type:String,
         default:""
     },
-    gstNo:{
+    gst:{
         type:String,
         default:""
     },
@@ -27,7 +27,11 @@ const CompanySchema = new Schema({
         type:Number,
         default:""
     },
-    address:{
+    website:{
+        type:String,
+        default:""
+    },
+    sourceOfFunds:{
         type:String,
         default:""
     },
