@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const ShopkeeperSchema = new Schema({
+const CompanySchema = new Schema({
    
     companyrName:{
         type:String,
@@ -36,4 +36,4 @@ const ShopkeeperSchema = new Schema({
         default:Date.now
     },
 });
-module.exports =Shopkeeper = mongoose.model("Shopkeeper",ShopkeeperSchema)
+module.exports =Company = mongoose.model("Company",CompanySchema)
