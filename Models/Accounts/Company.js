@@ -7,7 +7,7 @@ const CompanySchema = new Schema({
         type:String,
         required:true
     },
-    materialName:{
+    IPR:{
         type:String,
         default:""
     },
