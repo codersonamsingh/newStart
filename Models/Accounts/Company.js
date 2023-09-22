@@ -11,7 +11,7 @@ const CompanySchema = new Schema({
         type:String,
         default:""
     },
-    noOfItems:{
+    Tax:{
         type:String,
         default:""
     },
