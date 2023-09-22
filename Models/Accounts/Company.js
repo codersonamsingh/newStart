@@ -11,11 +11,11 @@ const CompanySchema = new Schema({
         type:String,
         default:""
     },
-    Tax:{
+    tax:{
         type:String,
         default:""
     },
-    itemRate:{
+    regulator:{
         type:String,
         default:""
     },
