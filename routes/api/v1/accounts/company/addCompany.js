@@ -123,6 +123,9 @@ async function getCompanyObj(req,type){
     if(req.body.address) {
         newCompany.address = req.body.address
     }
+    if(req.body.address) {
+        newCompany.address = req.body.address
+    }
      if(req.body.phoneNumber) {
         newCompany.phoneNumber = req.body. phoneNumber
     }
