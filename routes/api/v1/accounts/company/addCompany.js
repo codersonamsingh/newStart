@@ -126,8 +126,8 @@ async function getCompanyObj(req,type){
     if(req.body. sourceOfFunds) {
         newCompany. sourceOfFunds = req.body. sourceOfFunds
     }
-     if(req.body.phoneNumber) {
-        newCompany.phoneNumber = req.body. phoneNumber
+     if(req.body.openingDate) {
+        newCompany.openingDate = req.body.openingDate
     }
     if(req.body.comingDate) {
         newCompany.comingDate = req.body.comingDate
