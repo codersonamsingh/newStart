@@ -129,10 +129,7 @@ async function getCompanyObj(req,type){
      if(req.body.openingDate) {
         newCompany.openingDate = req.body.openingDate
     }
-    if(req.body.comingDate) {
-        newCompany.comingDate = req.body.comingDate
-    }
-
+   
     return newCompany
 }
     
