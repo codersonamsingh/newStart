@@ -121,7 +121,7 @@ async function getCompanyObj(req,type){
         newCompany.gst = req.body.gst
     }
     if(req.body.website) {
-        newCompany.address = req.body.address
+        newCompany.website = req.body.address
     }
     if(req.body.address) {
         newCompany.address = req.body.address
