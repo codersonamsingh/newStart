@@ -1,25 +1,25 @@
 const express = require("express");
-constShopkeeper = require("../../../../../Models/Accounts/Shopkeeper");
+constCompany = require("../../../../../Models/Accounts/Company");
 const router = express.Router();
-const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/ShopkeeperValidation")
+const {validateOnCreate, validateOnUpdate} = require("../../../../../validation/account/CompanyValidation")
 
 //CRUD = crete Read Update Delete
 
 //@type POST
-//@routes/api/v1/accounts/shopkeeper/addShopkeeper
-//@des crete Newshopkeeper
+//@routes/api/v1/accounts/company/addCompany
+//@des crete Newcompany
 //@access public
 
 router.post("/",validateOnCreate, async(req,res) =>{
 
     try{
-        const shopkeeperObj = await getShopkeeperObj(req,"create")
-console.log(shopkeeperObj)
-     await new Shopkeeper(shopkeeperObj)
+        const companyObj = await getCompanyObj(req,"create")
+console.log(companyObj)
+     await new Company(companyObj)
       .save();
       
       res.status(201).json({
-        message: "Shopkeeper Added",
+        message: "Company Added",
         varient : "success"
       })
 
@@ -36,27 +36,27 @@ console.log(shopkeeperObj)
 
 )
 //@type POST
-//@routes/api/v1/accounts/shopkeeper/addShopkeeper/id:
-//@des crete Updateshopkeeper
+//@routes/api/v1/accounts/company/addCompany/id:
+//@des crete Updatecompany
 //@access public
 router.post("/:id",async (req,res) => {
     
     try{
-        constshopkeeperObj = await getShopkeeperObj(req,"update")
+        constcompanyObj = await getCompanyObj(req,"update")
 
-        constshopkeeper = awaitShopkeeper.findOneAndUpdate(
+        constcompany = awaitCompany.findOneAndUpdate(
             {id:req.params.id},
-            {$set:ShopkeeperObj},
+            {$set:CompanyObj},
             {new:true}
         )
-        if(!shopkeeper){
+        if(!company){
             res.status(500).json({
-                message: "shopkeeper not found",
+                message: "company not found",
                 varient : "error"
               })
         }
         res.status(500).json({
-            message: "Shopkeeper Updated Successfully",
+            message: "Company Updated Successfully",
             varient : "error"
           })
      
@@ -72,22 +72,22 @@ router.post("/:id",async (req,res) => {
 })
 
 //@type Delete
-//@route / api/v1/accounts//addshopkeeper/deleteOne/id:
-//@des Deleteshopkeeper
+//@route / api/v1/accounts//addcompany/deleteOne/id:
+//@des Deletecompany
 //@access public
 
 router.delete("/deleteOne/:id",async(req,res) => {
 
     try{
-        constshopkeeper = awaitShopkeeper.findIdAndRemove(req.params.id);
-        if(!shopkeeper){
+        constcompany = awaitCompany.findIdAndRemove(req.params.id);
+        if(!company){
             res.status(500).json({
-                message: "shopkeeper not found",
+                message: "company not found",
                 varient : "error"
               })
         }
         res.status(500).json({
-            message: "Shopkeeper Deleted Successfully",
+            message: "Company Deleted Successfully",
             varient : "error"
           })
      
@@ -103,34 +103,34 @@ router.delete("/deleteOne/:id",async(req,res) => {
 
     }
     })
-async function getShopkeeperObj(req,type){
-    let newShopkeeper = {}
-    if(req.body.shopkeeperName) {
-        newShopkeeper.shopkeeperName = req.body.shopkeeperName
+async function getCompanyObj(req,type){
+    let newCompany = {}
+    if(req.body.companyName) {
+        newCompany.companyName = req.body.companyName
     }
     if(req.body.materialName) {
-        newShopkeeper.materialName = req.body.materialName
+        newCompany.materialName = req.body.materialName
     }
     if(req.body.noOfItems) {
-        newShopkeeper.noOfItems = req.body.noOfItems
+        newCompany.noOfItems = req.body.noOfItems
     }
      if(req.body.itemRate) {
-        newShopkeeper.itemRate = req.body.itemRate
+        newCompany.itemRate = req.body.itemRate
     }
      if(req.body.gstNo) {
-        newShopkeeper.gstNo = req.body.gstNo
+        newCompany.gstNo = req.body.gstNo
     }
     if(req.body.address) {
-        newShopkeeper.address = req.body.address
+        newCompany.address = req.body.address
     }
      if(req.body.phoneNumber) {
-        newShopkeeper.phoneNumber = req.body. phoneNumber
+        newCompany.phoneNumber = req.body. phoneNumber
     }
     if(req.body.comingDate) {
-        newShopkeeper.comingDate = req.body.comingDate
+        newCompany.comingDate = req.body.comingDate
     }
 
-    return newShopkeeper
+    return newCompany
 }
     
 module.exports = router;
