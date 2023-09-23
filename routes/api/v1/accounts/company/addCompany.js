@@ -111,8 +111,8 @@ async function getCompanyObj(req,type){
     if(req.body.IPR) {
         newCompany.IPR = req.body.IPR
     }
-    if(req.body.noOfItems) {
-        newCompany.noOfItems = req.body.noOfItems
+    if(req.body.incomeTax) {
+        newCompany.incomeTax = req.body.incomeTax
     }
      if(req.body.itemRate) {
         newCompany.itemRate = req.body.itemRate
