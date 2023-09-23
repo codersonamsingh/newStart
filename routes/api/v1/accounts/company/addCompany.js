@@ -108,8 +108,8 @@ async function getCompanyObj(req,type){
     if(req.body.companyName) {
         newCompany.companyName = req.body.companyName
     }
-    if(req.body.materialName) {
-        newCompany.materialName = req.body.materialName
+    if(req.body.IPR) {
+        newCompany.IPR = req.body.IPR
     }
     if(req.body.noOfItems) {
         newCompany.noOfItems = req.body.noOfItems
