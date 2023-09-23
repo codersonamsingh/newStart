@@ -114,8 +114,8 @@ async function getCompanyObj(req,type){
     if(req.body.incomeTax) {
         newCompany.incomeTax = req.body.incomeTax
     }
-     if(req.body. regulator) {
-        newCompany. regulator = req.body. regulator
+     if(req.body.regulator) {
+        newCompany.regulator = req.body.regulator
     }
      if(req.body.gstNo) {
         newCompany.gstNo = req.body.gstNo
