@@ -1,23 +1,23 @@
-//Read = 1. Get ALL Shopkeeper , 2. get one Shopkeeper by Id, 3. Search Shopkeeper with note or amount
+//Read = 1. Get ALL Company , 2. get one Company by Id, 3. Search Company with note or amount
 
 const express = require("express");
-const Shopkeeper = require("../../../../../Models/Accounts/Shopkeeper");
+const Company = require("../../../../../Models/Accounts/Company");
 const router = express.Router();
 
 //@type Get
-//@route /api/v1/account/Shopkeeper/getShopkeeper/getAll
-//@des get all  Shopkeeper
+//@route /api/v1/account/Company/getCompany/getAll
+//@des get all  Company
 //@access public
 router.get("/getAll", async(req,res) => {
 
 try{ 
     
-    const getShopkeeper = await Shopkeeper.find()
+    const getCompany = await Company.find()
 
 
      res.json({
-        data:getShopkeeper,
-        message:"Shopkeeper loaded",
+        data:getCompany,
+        message:"Company loaded",
         varient:"success"
      })
 
@@ -32,19 +32,19 @@ try{
 })
 
 //@type Get
-//@route /api/v1/account/Shopkeeper/getShopkeeper/getOne/:id
-//@des get one Shopkeeper
+//@route /api/v1/account/Company/getCompany/getOne/:id
+//@des get one Company
 //@access public
 router.get("/getOne/:id", async(req,res) => {
 
     try{ 
         
-        const getShopkeeper = await Shopkeeper.findById(req.params.id)
+        const getCompany = await Company.findById(req.params.id)
     
     
          res.json({
-            data:getShopkeeper,
-            message:"Shopkeeper loaded",
+            data:getCompany,
+            message:"Company loaded",
             varient:"success"
          })
     
@@ -59,8 +59,8 @@ router.get("/getOne/:id", async(req,res) => {
     })
 
 //@type Get search
-//@route /api/v1/account/Shopkeeper/getShopkeeper/search/:seachQuery
-//@des to search Shopkeeper
+//@route /api/v1/account/Company/getCompany/search/:seachQuery
+//@des to search Company
 //@access public
 router.get("/search/:searchQuery", async(req,res) => {
 
@@ -68,7 +68,7 @@ router.get("/search/:searchQuery", async(req,res) => {
         
         const searchQuery = req.params.searchQuery
 
-        const getShopkeeper = await Shopkeeper.find({
+        const getCompany = await Company.find({
             $or:[
                 {shopkeeperName: new RegExp(searchQuery, "i")},
                 {materialName: new RegExp(searchQuery, "i")},
@@ -77,8 +77,8 @@ router.get("/search/:searchQuery", async(req,res) => {
         })
     
          res.json({
-            data:getShopkeeper,
-            message:"Shopkeeper loaded",
+            data:getCompany,
+            message:"Company loaded",
             varient:"success"
          })
     
