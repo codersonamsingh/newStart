@@ -70,7 +70,7 @@ router.get("/search/:searchQuery", async(req,res) => {
 
         const getCompany = await Company.find({
             $or:[
-                {shopkeeperName: new RegExp(searchQuery, "i")},
+                {companyName: new RegExp(searchQuery, "i")},
                 {materialName: new RegExp(searchQuery, "i")},
                 
             ]
